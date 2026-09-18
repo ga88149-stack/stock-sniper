@@ -1,4 +1,4 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no"><meta name="theme-color" content="#0b1020"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="STOCK SNIPER"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png"><title>STOCK SNIPER V1.5</title>
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no"><meta name="theme-color" content="#0b1020"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="STOCK SNIPER"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png"><title>STOCK SNIPER V1.6</title>
 <style>
 :root{--bg:#0b1020;--panel:#121a2f;--panel2:#17213a;--text:#e9eefc;--muted:#91a0bd;--line:#293755;--good:#3ddc97;--bad:#ff6b7a;--warn:#f7c65f;--blue:#6ca6ff}*{box-sizing:border-box}body{margin:0;font-family:system-ui,"Microsoft JhengHei",sans-serif;background:var(--bg);color:var(--text)}header{padding:18px 22px;border-bottom:1px solid var(--line);display:flex;gap:16px;align-items:center;flex-wrap:wrap}h1{font-size:20px;margin:0}.tag{font-size:12px;color:var(--muted)}select,button,input{background:var(--panel2);color:var(--text);border:1px solid var(--line);padding:9px 12px;border-radius:8px}button{cursor:pointer}input{background:var(--panel2);color:var(--text);border:1px solid var(--line);padding:9px 10px;border-radius:8px;width:100%}.formgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin-top:10px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.posbox{border:1px solid var(--line);background:var(--panel2);border-radius:10px;padding:14px}.metricgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:10px}.metric{background:#0e1528;padding:10px;border-radius:8px}.dangerbox{border:1px solid var(--bad);padding:10px;border-radius:8px;margin-top:10px;color:#ffd1d6}.okbox{border:1px solid var(--good);padding:10px;border-radius:8px;margin-top:10px;color:#c9ffe7}@media(max-width:800px){.formgrid,.metricgrid{grid-template-columns:repeat(2,1fr)}}.wrap{max-width:1280px;margin:auto;padding:18px}.controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}.label{color:var(--muted);font-size:12px}.value{font-size:22px;font-weight:700;margin-top:5px}.wide{grid-column:span 2}.full{grid-column:1/-1}canvas{width:100%;height:520px;background:#0e1528;border-radius:9px}.signal{font-size:26px;font-weight:800}.good{color:var(--good)}.bad{color:var(--bad)}.neutral{color:var(--warn)}ul{margin:8px 0 0;padding-left:20px;color:#cbd5eb}.radar{width:100%;border-collapse:collapse;margin-top:8px}.radar th,.radar td{padding:10px;border-bottom:1px solid var(--line);text-align:right}.radar th:first-child,.radar td:first-child{text-align:left}.status{color:var(--muted);font-size:13px}.pill{display:inline-block;padding:4px 8px;border:1px solid var(--line);border-radius:999px;font-size:12px;margin:2px}.plan{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px}.plan>div{background:var(--panel2);padding:10px;border-radius:8px}.small{font-size:12px;color:var(--muted)}.err{color:var(--bad);white-space:pre-wrap}.triggerbox{border:1px solid var(--line);border-radius:10px;padding:14px;background:var(--panel2);margin-top:10px}.triggerTitle{font-size:22px;font-weight:800}.checkrow{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid var(--line)}.checkrow:last-child{border-bottom:0}.ok{color:var(--good);font-weight:700}.no{color:var(--warn);font-weight:700}@media(max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}.wide{grid-column:1/-1}}@media(max-width:800px){.plan{grid-template-columns:repeat(2,1fr)}}@media(max-width:500px){.plan{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.wide{grid-column:span 1}.value{font-size:19px}}
 .majorbar{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:14px}.majorcard{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px;cursor:pointer;min-width:0}.majorcard:hover{border-color:#52698f}.majorname{font-weight:800;font-size:14px}.majorprice{font-size:19px;font-weight:800;margin:5px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.majorinfo{font-size:12px;color:var(--muted);line-height:1.5}.positionLock{display:inline-block;margin-left:8px;padding:3px 7px;border:1px solid var(--good);border-radius:999px;color:var(--good);font-size:12px}.possymbol{font-size:16px;font-weight:800;margin:6px 0 10px;color:#cfe1ff}@media(max-width:900px){.majorbar{grid-template-columns:repeat(2,1fr)}}@media(max-width:500px){.majorbar{grid-template-columns:1fr}}
@@ -190,7 +190,7 @@ body .mobile-page.mobile-active[data-display-target].display-off{display:none!im
 .stockTradeNotice{padding:10px 12px;border:1px solid #33466b;border-radius:10px;background:#101b31;margin:8px 0 12px;line-height:1.6}
 .stockTradeNotice b{color:#dce8ff}
 </style>
-</head><body><header><div><h1>STOCK SNIPER <span class="version-badge">V1.5</span></h1><div class="tag">市場 → 點幣 → 交易判定・K線・最多 5 筆手動持倉</div></div><div id="status" class="status">準備中</div></header>
+</head><body><header><div><h1>STOCK SNIPER <span class="version-badge">V1.6</span></h1><div class="tag">市場 → 點幣 → 交易判定・K線・最多 5 筆手動持倉</div></div><div id="status" class="status">準備中</div></header>
 <div class="wrap"><div class="controls" id="tradeControls"><input id="symbolSearch" placeholder="搜尋台股，例如 2330 / 台積電" style="width:220px" autocomplete="off">
 <div id="symbolSuggestions" hidden></div><select id="symbol" aria-label="台股代號" title="台股代號"><option>BTC-USDT-SWAP</option></select><select id="bar" aria-label="K線週期"><option value="5m" selected>5分鐘</option><option value="15m">15分鐘</option><option value="1H">1小時</option></select><button id="refresh">重新整理</button><button id="scan">掃描市場</button></div>
 <div id="tradeSticky" style="display:none"><span id="stickySymbol"></span><span id="stickyPrice"></span></div>
@@ -224,7 +224,7 @@ body .mobile-page.mobile-active[data-display-target].display-off{display:none!im
 <div class="label">進場計畫 / 手動持倉追蹤</div><div class="posbox"><div id="positionState" class="triggerTitle neutral">尚未建立持倉</div><div class="stockTradeNotice"><b>台股一般買進</b><br><span class="small">不使用保證金／槓桿／爆倉邏輯。可選「依投入金額」計算可買股數，或「依最大虧損」依技術停損反推部位。一般模式不提供放空。</span></div><div id="positionSymbol" class="possymbol">尚未鎖定幣種</div><div class="formgrid"><label class="small">買進計算方式<select id="riskMode"><option value="fixed">依投入金額</option><option value="pro">依最大虧損</option></select></label><label class="small">方向<select id="posSide"><option value="long">一般買進</option><option value="short"></option></select></label><label class="small">預計 / 實際買進價<input id="posEntry" type="number" step="any" placeholder="可用目前價"></label><label class="small" id="marginLabel">預計投入金額 TWD<input id="accountEquity" type="number" step="any" value="100"></label><label class="small">最多可接受虧損 TWD<input id="maxLoss" type="number" step="any" value="5"></label><label class="small">股票部位<input id="leverage" type="number" min="1" max="125" value="20"></label><label class="small" id="manualTechWrap" style="display:none">技術 SL（可手動覆寫）<input id="manualTechSL" type="number" step="any" placeholder="留空＝採系統技術SL"></label><label class="small" id="actualMarginWrap" style="display:none">實際預計投入金額 USDT<input id="actualMargin" type="number" step="any" placeholder="計畫後自動帶入，可自行修改"></label></div><div id="modeHelp" class="small" style="margin-top:8px">固定倉位：預計投入金額 × 股票部位決定名義倉位，再反推 -1R 資金SL。</div><div class="actions"><button id="useLive">帶入目前價</button><button id="calcPlan">先計算進場計畫</button><button id="enterPosition">我已進場・開始追蹤</button><button id="closePosition">結束持倉</button></div><div id="preTradePlan" class="metricgrid" style="margin-top:10px"></div><div id="stockCalcOutput" class="triggerbox" style="margin:10px 0">輸入買進價與資金後，這裡會顯示可買股數、張數、停損風險與預估成本。</div><div id="preTradeAlert"></div><div id="positionMetrics" class="metricgrid"></div><div id="riskAlert"></div><div class="small" style="margin-top:8px">先看「進場計畫」再下單。固定投入模式：你指定預計投入金額＋股票部位＋1R，系統反推資金SL。依最大虧損：技術SL＋1R反推最大名義倉位；股票部位只顯示最低初始投入金額需求與安全檢查。建立持倉後幣種鎖定；即時U盈虧、報酬率皆未扣手續費、滑價與資金費。</div></div></div>
 <div id="chartSection" class="card full"><div class="label">K 線圖</div><canvas id="chart" width="1200" height="520"></canvas><div class="small" style="margin-top:8px">綠K＝收漲、紅K＝收跌；藍線 MA7、黃線 MA25。滑鼠滾輪＝放大/縮小；按住拖曳＝左右移動；移到 K 棒上可看 OHLC/成交量。雙擊圖表回到最新 K 棒。</div></div>
 <div id="holdingsSection" class="card full"><div class="label">我的持倉｜最多 5 筆</div><div class="small" style="margin:6px 0 10px">手動建立後鎖定幣種；即時盈虧未扣手續費、滑價與資金費。</div><div id="holdingCards"></div></div>
-<div id="radarSection" class="card full"><div class="label">輕量交易雷達｜僅顯示 5 個活躍 台股，降低手機負載</div><div class="small" id="scanInfo" style="margin-top:6px">載入中…</div><div class="radarWrap"><table class="radar"><thead><tr><th>標的</th><th>價格</th><th>RSI</th><th>Funding</th><th>OI</th><th>24H活躍量</th><th>15m/1H/4H</th><th>Score</th><th>結構</th></tr></thead><tbody id="radar"></tbody></table></div></div>
+<div id="radarSection" class="card full"><div class="label">輕量交易雷達｜僅顯示 5 個活躍 台股，降低手機負載</div><div class="small" id="scanInfo" style="margin-top:6px">載入中…</div><div class="radarWrap"><table class="radar"><thead><tr><th>標的</th><th>價格</th><th>RSI</th><th>漲跌幅</th><th>成交量</th><th>盤中活躍量</th><th>15m/1H/4H</th><th>Score</th><th>結構</th></tr></thead><tbody id="radar"></tbody></table></div></div>
 </div></div>
 <nav class="iosnav"><button data-page="market" class="active"><b>◎</b>市場狀況</button><button data-page="trade"><b>◇</b>交易</button><button data-page="holding"><b>▣</b>持倉</button></nav>
 <script>
@@ -244,7 +244,7 @@ function noData(){
  if($('tradeCtxSymbol'))$('tradeCtxSymbol').textContent=`${activeSym} ${nameOf(activeSym)}`;if($('stickySymbol'))$('stickySymbol').textContent=`${activeSym} ${nameOf(activeSym)}`;if($('stickyBar'))$('stickyBar').textContent=currentBar
 }
 function choose(id){activeSym=id;if($('symbol'))$('symbol').value=id;if($('symbolSearch'))$('symbolSearch').value=`${id} ${nameOf(id)}`;if($('status'))$('status').textContent=`${id} ${nameOf(id)}｜等待台股行情`;startStockLive();if(window.dhShowPage&&matchMedia('(max-width:700px)').matches)window.dhShowPage('trade')}
-function renderHoldingCards(){let b=$('holdingCards');if(!b)return;b.innerHTML=positions.length?positions.map((p,i)=>`<div class="holdingCard"><div class="holdingTop"><div><b>${i+1}. ${p.id} ${nameOf(p.id)}</b><div class="small">${p.side||'LONG'}・${p.bar||'5m'}・投入 NT$${pf(p.amount)}</div></div><div class="holdingPnl">等待 LIVE</div></div><div class="holdingDecision warn"><div class="holdingStatus">🟡 行情尚未連線</div><div class="small">保留 V7.1 的 SL / TP 與持倉再評估架構；即時行情接入後才會啟用觸發判定。</div></div></div>`).join(''):'<div class="triggerbox">目前沒有手動持倉。</div>'}
+function renderHoldingCards(){let b=$('holdingCards');if(!b)return;b.innerHTML=positions.length?positions.map((p,i)=>`<div class="holdingCard"><div class="holdingTop"><div><b>${i+1}. ${p.id} ${nameOf(p.id)}</b><div class="small">${p.side||'LONG'}・${p.bar||'5m'}・投入 NT$${pf(p.amount)}</div></div><div class="holdingPnl">等待 Yahoo</div></div><div class="holdingDecision warn"><div class="holdingStatus">🟡 行情尚未連線</div><div class="small">保留 V7.1 的 SL / TP 與持倉再評估架構；即時行情接入後才會啟用觸發判定。</div></div></div>`).join(''):'<div class="triggerbox">目前沒有手動持倉。</div>'}
 
 const DAYTRADE_IDS=['2330','2317','2454','2382','3231','3017','3661','2603','2609','2376'];
 const INVEST_IDS=['2330','2412','3045','4904','2881','2882','2886','2891','2892','5880'];
@@ -253,51 +253,62 @@ function renderIdeas(mode='day'){
  const grid=$('ideaGrid'),ex=$('ideaExplain');if(!grid)return;
  const ids=mode==='day'?DAYTRADE_IDS:(mode==='etf'?ETF_IDS:INVEST_IDS);
  if(ex)ex.textContent=mode==='day'?'當沖觀察池：目前先列高流動性候選；接入 LIVE 後再依量比、VWAP、波動、成交額與收盤訊號即時排序。':(mode==='etf'?'ETF 專區：顯示配息頻率／月份參考；實際除息與配息日期仍以投信最新公告為準。':'存股觀察池：這裡是研究候選，不做買進排名；後續可加入股利、殖利率、EPS、配息穩定度與估值資料。');
- grid.innerHTML=ids.map(id=>`<div class="ideaItem" data-idea="${id}"><b>${id} ${nameOf(id)}</b><div class="reason">${STOCKS.find(x=>x.id===id)?.dist?'配息月份：'+STOCKS.find(x=>x.id===id).dist+'<br>':''}${mode==='day'?'等待 LIVE 後計算當沖條件':'等待基本面資料後計算存股指標'}</div></div>`).join('');
+ grid.innerHTML=ids.map(id=>`<div class="ideaItem" data-idea="${id}"><b>${id} ${nameOf(id)}</b><div class="reason">${STOCKS.find(x=>x.id===id)?.dist?'配息月份：'+STOCKS.find(x=>x.id===id).dist+'<br>':''}${mode==='day'?'等待 Yahoo 後計算當沖條件':'等待基本面資料後計算存股指標'}</div></div>`).join('');
  grid.querySelectorAll('[data-idea]').forEach(e=>e.onclick=()=>choose(e.dataset.idea));
  $('dayTradeTab')?.classList.toggle('active',mode==='day');$('investTab')?.classList.toggle('active',mode==='invest');$('etfTab')?.classList.toggle('active',mode==='etf');
 }
 
-const TWSE_MIS='https://mis.twse.com.tw/stock/api/getStockInfo.jsp';
-let liveTimer=null,liveQuote=null,minuteTicks=[];
-function marketChannel(id){return 'tse_'+id+'.tw'}
-async function fetchLiveQuote(id){
- const u=TWSE_MIS+'?ex_ch='+encodeURIComponent(marketChannel(id))+'&json=1&delay=0&_='+Date.now();
- const r=await fetch(u,{cache:'no-store'});if(!r.ok)throw new Error('quote '+r.status);
- const j=await r.json(),q=j.msgArray&&j.msgArray[0];if(!q)throw new Error('no quote');
- const n=x=>{let v=parseFloat(x);return Number.isFinite(v)?v:null};
- return {id,name:q.n||nameOf(id),last:n(q.z)||n(q.y),prev:n(q.y),open:n(q.o),high:n(q.h),low:n(q.l),vol:n(q.v),totalVol:n(q.tv),time:q.t||'',date:q.d||'',bid:q.b||'',ask:q.a||''};
+const YAHOO_BASE='https://query1.finance.yahoo.com/v8/finance/chart/';
+let liveTimer=null,liveQuote=null,yahooBars={};
+function yahooSymbol(id){
+ const x=STOCKS.find(s=>s.id===id); // most list entries are TWSE; known OTC can be extended here
+ const otc=['5483','6488','8299'];
+ return id+(otc.includes(id)?'.TWO':'.TW');
 }
-function aggregateBars(ticks,mins){
- const map=new Map();
- for(const x of ticks){let d=new Date(x.ts),m=d.getHours()*60+d.getMinutes(),bucket=Math.floor(m/mins)*mins,key=d.toDateString()+'-'+bucket;
-  if(!map.has(key))map.set(key,{ts:x.ts,open:x.p,high:x.p,low:x.p,close:x.p,volume:x.v||0});
-  else{let k=map.get(key);k.high=Math.max(k.high,x.p);k.low=Math.min(k.low,x.p);k.close=x.p;k.volume+=(x.v||0)}
- } return [...map.values()];
+async function fetchYahooJSON(url){
+ const tries=[
+  url,
+  'https://api.allorigins.win/raw?url='+encodeURIComponent(url),
+  'https://corsproxy.io/?url='+encodeURIComponent(url)
+ ];
+ let lastErr;
+ for(const u of tries){try{const r=await fetch(u,{cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status);const j=await r.json();if(j?.chart?.result?.[0])return j;throw new Error('Yahoo 無資料')}catch(e){lastErr=e}}
+ throw lastErr||new Error('Yahoo 連線失敗');
 }
-function stockBarMinutes(){return currentBar==='15m'?15:currentBar==='1H'?60:5}
+async function fetchYahooBars(id,interval='5m',range='5d'){
+ const sym=yahooSymbol(id),u=YAHOO_BASE+encodeURIComponent(sym)+'?interval='+interval+'&range='+range+'&includePrePost=false&events=div%2Csplits&_='+Date.now();
+ const j=await fetchYahooJSON(u),r=j.chart.result[0],q=r.indicators?.quote?.[0]||{},ts=r.timestamp||[];
+ const bars=ts.map((t,i)=>({ts:t*1000,open:q.open?.[i],high:q.high?.[i],low:q.low?.[i],close:q.close?.[i],volume:q.volume?.[i]||0})).filter(x=>[x.open,x.high,x.low,x.close].every(Number.isFinite));
+ return {meta:r.meta||{},bars};
+}
+function tfInterval(){return currentBar==='15m'?'15m':currentBar==='1H'?'60m':'5m'}
 function sma(a,n){if(a.length<n)return null;return a.slice(-n).reduce((x,y)=>x+y,0)/n}
 function rsiSimple(a,n=14){if(a.length<=n)return null;let g=0,l=0;for(let i=a.length-n;i<a.length;i++){let d=a[i]-a[i-1];if(d>0)g+=d;else l-=d}if(!l)return 100;let rs=g/l;return 100-100/(1+rs)}
-function renderStockLive(q){
- liveQuote=q;let last=q.last;
- if($('price'))$('price').textContent=pf(last);if($('liveDot')){$('liveDot').textContent='● TWSE LIVE';$('liveDot').style.color='#4bd49b'}
- if($('lastTs'))$('lastTs').textContent=`${q.date} ${q.time}｜昨收 ${pf(q.prev)}｜高 ${pf(q.high)}｜低 ${pf(q.low)}｜量 ${q.totalVol??'—'}`;
- if($('tradeCtxSymbol'))$('tradeCtxSymbol').textContent=`${activeSym} ${q.name}`;if($('stickySymbol'))$('stickySymbol').textContent=`${activeSym} ${q.name}`;if($('stickyBar'))$('stickyBar').textContent=currentBar;
- let ts=Date.now(); if(last){minuteTicks.push({ts,p:last,v:q.vol||0});minuteTicks=minuteTicks.filter(x=>ts-x.ts<21600000)}
- let bars=aggregateBars(minuteTicks,stockBarMinutes()),c=bars.map(x=>x.close),m7=sma(c,7),m25=sma(c,25),rv=rsiSimple(c);
+function fmtTime(ms){try{return new Intl.DateTimeFormat('zh-TW',{timeZone:'Asia/Taipei',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date(ms))}catch{return '—'}}
+function renderYahooLive(pack){
+ const {meta,bars}=pack;if(!bars.length)throw new Error('無 K 線');yahooBars[currentBar]=bars;
+ const b=bars[bars.length-1],last=Number(meta.regularMarketPrice)||b.close,prev=Number(meta.chartPreviousClose)||Number(meta.previousClose)||null;
+ const day=bars.filter(x=>new Date(x.ts).toLocaleDateString('en-CA',{timeZone:'Asia/Taipei'})===new Date(b.ts).toLocaleDateString('en-CA',{timeZone:'Asia/Taipei'}));
+ const open=day[0]?.open??b.open,high=day.length?Math.max(...day.map(x=>x.high)):b.high,low=day.length?Math.min(...day.map(x=>x.low)):b.low,totalVol=day.reduce((a,x)=>a+(x.volume||0),0);
+ liveQuote={id:activeSym,name:nameOf(activeSym),last,prev,open,high,low,totalVol,time:fmtTime((meta.regularMarketTime||b.ts/1000)*1000)};
+ if($('price'))$('price').textContent=pf(last);if($('liveDot')){$('liveDot').textContent='● YAHOO';$('liveDot').style.color='#4bd49b'}
+ if($('lastTs'))$('lastTs').textContent=`${liveQuote.time}｜昨收 ${pf(prev)}｜開 ${pf(open)}｜高 ${pf(high)}｜低 ${pf(low)}｜量 ${totalVol.toLocaleString()}`;
+ if($('tradeCtxSymbol'))$('tradeCtxSymbol').textContent=`${activeSym} ${nameOf(activeSym)}`;if($('stickySymbol'))$('stickySymbol').textContent=`${activeSym} ${nameOf(activeSym)}`;if($('stickyBar'))$('stickyBar').textContent=currentBar;
+ const c=bars.map(x=>x.close),m7=sma(c,7),m25=sma(c,25),rv=rsiSimple(c),recent=bars.slice(-20),sup=Math.min(...recent.map(x=>x.low)),res=Math.max(...recent.map(x=>x.high));
  if($('ma'))$('ma').textContent=(m7?pf(m7):'—')+' / '+(m25?pf(m25):'—');if($('rsi'))$('rsi').textContent=rv?rv.toFixed(1):'—';
- if($('support'))$('support').textContent=pf(q.low);if($('resistance'))$('resistance').textContent=pf(q.high);
- if($('oi'))$('oi').textContent=q.totalVol??'—';if($('fund'))$('fund').textContent=q.prev?(((last-q.prev)/q.prev)*100).toFixed(2)+'%':'—';
- if($('cvd'))$('cvd').textContent='TWSE 成交';
- let ready=bars.length>=8;
- let txt=ready?(m7&&last>m7?'🟢 多方結構觀察｜等待完整收盤條件':'🟡 尚未形成買進條件'):'🟡 累積盤中 K 棒中';
- ['entryDecision','triggerBox','signalBox'].forEach(id=>{if($(id))$(id).innerHTML=`<span class="${txt.includes('🟢')?'good':'neutral'}">${activeSym} ${q.name}｜${currentBar}<br>${txt}<br>一般股票模式預設只做多，不產生 SHORT 建議。</span>`});
+ if($('support'))$('support').textContent=pf(sup);if($('resistance'))$('resistance').textContent=pf(res);if($('oi'))$('oi').textContent=totalVol.toLocaleString();
+ if($('fund'))$('fund').textContent=prev?(((last-prev)/prev)*100).toFixed(2)+'%':'—';if($('cvd'))$('cvd').textContent='Yahoo OHLCV';
+ let state='🟡 等待更明確買進條件',cls='neutral';
+ if(m7&&m25&&rv!=null&&last>m7&&m7>m25&&rv>=50&&rv<=75){state='🟢 多方結構成立｜等待完成 K 棒確認';cls='good'}
+ else if(m7&&m25&&(last<m25||rv<40)){state='🔴 結構偏弱｜目前不適合追買';cls='bad'}
+ ['entryDecision','triggerBox','signalBox'].forEach(id=>{if($(id))$(id).innerHTML=`<span class="${cls}">${activeSym} ${nameOf(activeSym)}｜${currentBar}<br>${state}<br>一般股票模式只提供買進/觀望判定，不產生放空建議。</span>`});
+ if($('status'))$('status').textContent=`${activeSym} ${nameOf(activeSym)}｜Yahoo ${liveQuote.time}`;
 }
 async function refreshStockLive(){
- try{let q=await fetchLiveQuote(activeSym);renderStockLive(q);if($('status'))$('status').textContent=`${activeSym} ${q.name}｜TWSE ${q.time||'LIVE'}`}
- catch(e){if($('liveDot')){$('liveDot').textContent='● LIVE 連線失敗';$('liveDot').style.color='#ff7d8c'};if($('lastTs'))$('lastTs').textContent='TWSE MIS 無法由目前瀏覽器直接取得；可改接行情橋接器。'}
+ try{if($('liveDot')){$('liveDot').textContent='● YAHOO 連線中';$('liveDot').style.color='#f7c65f'};const p=await fetchYahooBars(activeSym,tfInterval(),'5d');renderYahooLive(p)}
+ catch(e){if($('liveDot')){$('liveDot').textContent='● YAHOO 連線失敗';$('liveDot').style.color='#ff7d8c'};if($('lastTs'))$('lastTs').textContent='Yahoo 行情目前無法取得｜'+(e?.message||'連線錯誤');if($('status'))$('status').textContent='Yahoo 行情連線失敗'}
 }
-function startStockLive(){clearInterval(liveTimer);refreshStockLive();liveTimer=setInterval(refreshStockLive,5000)}
+function startStockLive(){clearInterval(liveTimer);refreshStockLive();liveTimer=setInterval(refreshStockLive,15000)}
 function calcStockPlan(){
  const entry=Number($('actualEntry')?.value)||(liveQuote&&liveQuote.last);
  if(!entry){if($('stockCalcOutput'))$('stockCalcOutput').innerHTML='<span class="bad">尚未取得或輸入買進價。</span>';return}
@@ -318,9 +329,9 @@ function setup(){
  let sel=$('symbol');sel.innerHTML=STOCKS.map(x=>`<option value="${x.id}">${x.id} · ${x.name}</option>`).join('');
  $('symbolSearch')?.addEventListener('focus',suggest);$('symbolSearch')?.addEventListener('input',suggest);$('symbolSearch')?.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();let a=matches(e.target.value);if(a[0])choose(a[0].id)}});
  $('symbolSuggestions')?.addEventListener('click',e=>{let b=e.target.closest('.symbol-suggestion');if(b){choose(b.dataset.inst);$('symbolSuggestions').hidden=true}});
- sel?.addEventListener('change',e=>choose(e.target.value));$('bar')?.addEventListener('change',()=>{currentBar=$('bar').value;renderStockLive(liveQuote||{});});$('refresh')?.addEventListener('click',refreshStockLive);
- if($('scanInfo'))$('scanInfo').textContent='台股雷達已沿用 V7.1 版型；接入行情後依成交量、VWAP、量價動能與多週期結構掃描。';
- if($('radar'))$('radar').innerHTML=STOCKS.slice(0,5).map(x=>`<tr><td>${x.id} ${x.name}</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="neutral">等待 LIVE</td></tr>`).join('');
+ sel?.addEventListener('change',e=>choose(e.target.value));$('bar')?.addEventListener('change',()=>{currentBar=$('bar').value;refreshStockLive();});$('refresh')?.addEventListener('click',refreshStockLive);
+ if($('scanInfo'))$('scanInfo').textContent='台股雷達已沿用 V7.1 版型；Yahoo 行情版：依成交量、量價動能與多週期結構掃描。';
+ if($('radar'))$('radar').innerHTML=STOCKS.slice(0,5).map(x=>`<tr><td>${x.id} ${x.name}</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="neutral">等待 Yahoo</td></tr>`).join('');
  $('useLive')?.addEventListener('click',()=>{if(liveQuote&&$('actualEntry'))$('actualEntry').value=liveQuote.last});$('calcPlan')?.addEventListener('click',calcStockPlan);$('enterPosition')?.addEventListener('click',calcStockPlan);
  $('dayTradeTab')?.addEventListener('click',()=>renderIdeas('day'));$('investTab')?.addEventListener('click',()=>renderIdeas('invest'));$('etfTab')?.addEventListener('click',()=>renderIdeas('etf'));renderIdeas('day');choose('2330');renderHoldingCards()
 }
