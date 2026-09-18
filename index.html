@@ -1,0 +1,314 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no"><meta name="theme-color" content="#0b1020"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="STOCK SNIPER"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png"><title>STOCK SNIPER V1.4</title>
+<style>
+:root{--bg:#0b1020;--panel:#121a2f;--panel2:#17213a;--text:#e9eefc;--muted:#91a0bd;--line:#293755;--good:#3ddc97;--bad:#ff6b7a;--warn:#f7c65f;--blue:#6ca6ff}*{box-sizing:border-box}body{margin:0;font-family:system-ui,"Microsoft JhengHei",sans-serif;background:var(--bg);color:var(--text)}header{padding:18px 22px;border-bottom:1px solid var(--line);display:flex;gap:16px;align-items:center;flex-wrap:wrap}h1{font-size:20px;margin:0}.tag{font-size:12px;color:var(--muted)}select,button,input{background:var(--panel2);color:var(--text);border:1px solid var(--line);padding:9px 12px;border-radius:8px}button{cursor:pointer}input{background:var(--panel2);color:var(--text);border:1px solid var(--line);padding:9px 10px;border-radius:8px;width:100%}.formgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin-top:10px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.posbox{border:1px solid var(--line);background:var(--panel2);border-radius:10px;padding:14px}.metricgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:10px}.metric{background:#0e1528;padding:10px;border-radius:8px}.dangerbox{border:1px solid var(--bad);padding:10px;border-radius:8px;margin-top:10px;color:#ffd1d6}.okbox{border:1px solid var(--good);padding:10px;border-radius:8px;margin-top:10px;color:#c9ffe7}@media(max-width:800px){.formgrid,.metricgrid{grid-template-columns:repeat(2,1fr)}}.wrap{max-width:1280px;margin:auto;padding:18px}.controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}.label{color:var(--muted);font-size:12px}.value{font-size:22px;font-weight:700;margin-top:5px}.wide{grid-column:span 2}.full{grid-column:1/-1}canvas{width:100%;height:520px;background:#0e1528;border-radius:9px}.signal{font-size:26px;font-weight:800}.good{color:var(--good)}.bad{color:var(--bad)}.neutral{color:var(--warn)}ul{margin:8px 0 0;padding-left:20px;color:#cbd5eb}.radar{width:100%;border-collapse:collapse;margin-top:8px}.radar th,.radar td{padding:10px;border-bottom:1px solid var(--line);text-align:right}.radar th:first-child,.radar td:first-child{text-align:left}.status{color:var(--muted);font-size:13px}.pill{display:inline-block;padding:4px 8px;border:1px solid var(--line);border-radius:999px;font-size:12px;margin:2px}.plan{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px}.plan>div{background:var(--panel2);padding:10px;border-radius:8px}.small{font-size:12px;color:var(--muted)}.err{color:var(--bad);white-space:pre-wrap}.triggerbox{border:1px solid var(--line);border-radius:10px;padding:14px;background:var(--panel2);margin-top:10px}.triggerTitle{font-size:22px;font-weight:800}.checkrow{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid var(--line)}.checkrow:last-child{border-bottom:0}.ok{color:var(--good);font-weight:700}.no{color:var(--warn);font-weight:700}@media(max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}.wide{grid-column:1/-1}}@media(max-width:800px){.plan{grid-template-columns:repeat(2,1fr)}}@media(max-width:500px){.plan{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.wide{grid-column:span 1}.value{font-size:19px}}
+.majorbar{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:14px}.majorcard{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px;cursor:pointer;min-width:0}.majorcard:hover{border-color:#52698f}.majorname{font-weight:800;font-size:14px}.majorprice{font-size:19px;font-weight:800;margin:5px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.majorinfo{font-size:12px;color:var(--muted);line-height:1.5}.positionLock{display:inline-block;margin-left:8px;padding:3px 7px;border:1px solid var(--good);border-radius:999px;color:var(--good);font-size:12px}.possymbol{font-size:16px;font-weight:800;margin:6px 0 10px;color:#cfe1ff}@media(max-width:900px){.majorbar{grid-template-columns:repeat(2,1fr)}}@media(max-width:500px){.majorbar{grid-template-columns:1fr}}
+
+/* iPhone / PWA */
+html,body{overscroll-behavior-y:none}body{padding-top:env(safe-area-inset-top);padding-bottom:calc(74px + env(safe-area-inset-bottom))}header{position:sticky;top:0;z-index:20;background:rgba(11,16,32,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding-left:max(14px,env(safe-area-inset-left));padding-right:max(14px,env(safe-area-inset-right))}.iosnav{display:none}.radarWrap{overflow-x:auto;-webkit-overflow-scrolling:touch}.radar{min-width:920px}.majorbar{-webkit-overflow-scrolling:touch}.touchHint{display:none}
+@media(max-width:700px){header{padding:11px 14px}h1{font-size:17px}.tag{font-size:10px}.wrap{padding:10px}.controls{display:grid;grid-template-columns:1fr 92px;gap:8px}.controls #symbolSearch{width:100%!important;grid-column:1/-1}.controls #symbol{min-width:0;width:100%}.controls button{padding:10px 8px}.majorbar{display:flex;overflow-x:auto;gap:8px;scroll-snap-type:x proximity;padding-bottom:4px}.majorcard{flex:0 0 145px;scroll-snap-align:start}.majorprice{font-size:16px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.card{padding:11px;border-radius:10px}.wide,.full{grid-column:1/-1}.value{font-size:18px}.signal{font-size:21px}.formgrid{grid-template-columns:1fr 1fr}.metricgrid{grid-template-columns:1fr 1fr}.plan{grid-template-columns:1fr 1fr}canvas{height:430px;touch-action:none}.radar th,.radar td{padding:8px;font-size:12px}.iosnav{display:grid;position:fixed;z-index:50;bottom:0;left:0;right:0;grid-template-columns:repeat(4,1fr);background:rgba(14,21,40,.96);border-top:1px solid var(--line);padding:7px 8px calc(7px + env(safe-area-inset-bottom));backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}.iosnav button{border:0;background:transparent;padding:7px 2px;font-size:11px;color:var(--muted)}.iosnav button b{display:block;font-size:18px;color:var(--text);margin-bottom:2px}.touchHint{display:block}.checkrow{font-size:13px}.posbox{padding:10px}.actions button{flex:1;min-width:120px}}
+@media(max-width:390px){.grid{grid-template-columns:1fr 1fr}.formgrid,.metricgrid,.plan{grid-template-columns:1fr}.majorcard{flex-basis:136px}.value{font-size:17px}}
+
+/* V4 mobile app shell */
+@media(max-width:700px){
+ body{padding-bottom:calc(76px + env(safe-area-inset-bottom));background:#080d19}
+ header{min-height:58px;padding:9px 12px;align-items:center} header h1{font-size:16px;letter-spacing:.2px}.tag{display:none}#status{margin-left:auto;font-size:11px;max-width:42%;text-align:right}
+ .wrap{padding:8px 8px 14px}.controls{position:sticky;top:58px;z-index:18;background:rgba(8,13,25,.96);margin:0 -8px 8px;padding:8px;grid-template-columns:1fr 76px 44px;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+ .controls #symbolSearch{display:block;grid-column:1/-1;min-height:44px;font-size:16px}.controls #symbol{grid-column:auto}.controls #bar{width:76px}.controls #refresh{font-size:0;padding:8px}.controls #refresh:after{content:'↻';font-size:20px}.controls #scan{display:none}
+ .card{border-radius:14px;padding:12px}.mobile-hidden{display:none!important}.mobile-page{display:none!important}.mobile-page.mobile-active{display:block!important}.grid>.mobile-page.mobile-active{display:block!important}
+ #majorSection{margin-bottom:8px!important}.majorbar{gap:7px}.majorcard{flex:0 0 132px;padding:10px}.majorname{font-size:13px}.majorprice{font-size:15px}.majorinfo{font-size:11px}
+ #radarSection{margin-top:8px}.radarWrap{overflow:visible}.radar{min-width:0;table-layout:fixed}.radar th,.radar td{font-size:11px;padding:9px 5px}.radar th:nth-child(3),.radar td:nth-child(3),.radar th:nth-child(4),.radar td:nth-child(4),.radar th:nth-child(5),.radar td:nth-child(5),.radar th:nth-child(6),.radar td:nth-child(6),.radar th:nth-child(7),.radar td:nth-child(7){display:none}.radar th:nth-child(1){width:25%}.radar th:nth-child(2){width:32%}.radar th:nth-child(8){width:16%}.radar th:nth-child(9){width:27%}
+ .grid{display:block}.grid>.card{margin-bottom:8px}.analysis-page .value{font-size:20px}.analysis-page ul{font-size:13px}.checkrow{gap:8px}.triggerTitle{font-size:19px}
+ #chartSection{padding:8px}#chartSection>.label{padding:4px 4px 8px}canvas{height:58vh;min-height:420px;border-radius:10px}#chartSection .small{font-size:10px;line-height:1.45}
+ #positionSection{padding:10px}.posbox{border:0;background:transparent;padding:0}.formgrid{grid-template-columns:1fr 1fr;gap:8px}.formgrid label{font-size:11px}.formgrid input,.formgrid select{font-size:16px;min-height:44px;padding:9px}.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}.actions button{min-width:0;min-height:46px;font-weight:700}.metricgrid{grid-template-columns:1fr 1fr}.metric{padding:9px}.metric .value{font-size:18px}
+ .iosnav{grid-template-columns:repeat(4,1fr);padding-top:5px}.iosnav button{min-height:51px;border-radius:10px}.iosnav button.active{background:#1a2744;color:#fff}.iosnav button.active b{color:#7fb0ff}
+ body.holding-mode #positionSection .formgrid,body.holding-mode #positionSection #modeHelp,body.holding-mode #positionSection .actions,body.holding-mode #positionSection #preTradePlan,body.holding-mode #positionSection #preTradeAlert,body.holding-mode #positionSection>.label,body.holding-mode #positionSection .posbox>.small:last-child{display:none!important}
+}
+
+@media(max-width:700px){
+ .iosnav{grid-template-columns:repeat(3,1fr)!important}
+ body.mobile-v46 .controls select, body.mobile-v46 .controls button{display:none}
+ body.mobile-v46 .controls{grid-template-columns:1fr!important}
+ body.mobile-v46 .controls #symbolSearch{display:block!important;grid-column:1/-1}
+ #holdingsSection{display:none}
+ body.holding-mode #holdingsSection{display:block!important}
+ body.holding-mode #positionSection{display:none!important}
+ .holdingCard{border:1px solid var(--line);border-radius:12px;padding:12px;margin:10px 0;background:#101a30}
+ .holdingTop{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+ .holdingPnl{font-size:22px;font-weight:800}
+ .holdingGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+ .holdingGrid>div{background:#0c1426;border-radius:9px;padding:9px}
+}
+
+/* V4.6 definitive simplified UI */
+.v46-hide{display:none!important}
+@media(max-width:700px){
+ body.mobile-v46 #tradeContext{display:none!important}
+ body.mobile-v46 .v46-hide{display:none!important}
+ body.mobile-v46 #majorSection .label{font-size:0}
+ body.mobile-v46 #majorSection .label:after{content:'市場狀況｜點選幣種直接進入交易判定';font-size:12px}
+}
+
+/* V4.7: UI only shows information needed to decide whether entry is available. Hidden metrics remain available to signal calculations. */
+.v47-hide,.v47-internal{display:none!important}
+
+/* V5.0: fixed trade identity + live price; trade page keeps symbol/timeframe selectors. */
+.trade-sticky{display:none}
+@media(max-width:700px){
+ body.page-trade .controls{display:grid!important;position:sticky;top:126px;z-index:23;grid-template-columns:minmax(0,1fr) 112px!important;gap:8px;margin:0 -8px 8px;padding:8px 12px;background:rgba(11,16,32,.97);border-bottom:1px solid var(--line);box-shadow:0 6px 18px rgba(0,0,0,.18)}
+ body.page-trade .controls #symbolSearch,body.page-trade .controls button{display:none!important}
+ body.page-trade .controls #symbol,body.page-trade .controls #bar{display:block!important;width:100%!important;min-height:42px;font-size:15px}
+ body.page-trade .controls #symbol{grid-column:1!important}
+ body.page-trade .controls #bar{grid-column:2!important}
+ body.page-trade .trade-sticky{display:flex;position:sticky;top:58px;z-index:24;align-items:center;justify-content:space-between;gap:12px;margin:0 -8px 8px;padding:10px 12px;background:rgba(11,16,32,.97);border-bottom:1px solid var(--line);box-shadow:0 6px 18px rgba(0,0,0,.24);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+ .trade-sticky .ts-symbol{font-size:16px;font-weight:850;color:#e9eefc;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+ .trade-sticky .ts-price{text-align:right;white-space:nowrap}
+ .trade-sticky .ts-price b{display:block;font-size:20px;line-height:1.05;color:#fff}
+ .trade-sticky .small{font-size:10px}
+}
+
+/* V5.1 unified clean UI: same controls on market/trade, never floating. */
+.trade-sticky{display:none!important}
+.controls{position:static!important;top:auto!important;z-index:auto!important;box-shadow:none!important;background:transparent!important;margin-bottom:14px!important;padding:0!important;display:grid!important;grid-template-columns:minmax(180px,1.4fr) minmax(150px,1fr) 110px!important;gap:8px!important}
+.controls #symbolSearch,.controls #symbol,.controls #bar{display:block!important;width:100%!important;min-height:42px!important;font-size:15px!important}
+.controls #symbolSearch{grid-column:1!important}.controls #symbol{grid-column:2!important}.controls #bar{grid-column:3!important}
+.controls #refresh,.controls #scan{display:none!important}
+.v47-hide,.v47-internal,#tradeContext{display:none!important}
+@media(max-width:700px){
+ body.page-holding .controls{display:none!important}
+ body.page-market .controls,body.page-trade .controls{display:grid!important;position:static!important;grid-template-columns:1fr 112px!important;margin:0 0 10px!important;padding:0!important;background:transparent!important;border:0!important}
+ body.page-market .controls #symbolSearch,body.page-trade .controls #symbolSearch{display:block!important;grid-column:1/-1!important;min-height:44px!important;font-size:16px!important}
+ body.page-market .controls #symbol,body.page-trade .controls #symbol{display:block!important;grid-column:1!important}
+ body.page-market .controls #bar,body.page-trade .controls #bar{display:block!important;grid-column:2!important;width:100%!important}
+ body.page-market .controls button,body.page-trade .controls button{display:none!important}
+}
+
+/* V5.2 trade page hard cleanup + integrated sticky trade header */
+.version-badge{font-size:10px;font-weight:600;color:var(--muted);vertical-align:middle;margin-left:5px;letter-spacing:.04em}
+/* Internal analysis data stays in DOM for calculations but can never render. */
+.v47-hide,.v47-internal,#tradeContext{display:none!important}
+@media(max-width:700px){
+  body.page-trade .controls{position:sticky!important;top:0!important;z-index:45!important;background:rgba(11,16,32,.98)!important;padding:8px 0!important;margin:0 0 8px!important;border-bottom:1px solid var(--line)!important;box-shadow:none!important}
+  body.page-trade .grid>.card:first-child{position:sticky!important;top:106px!important;z-index:44!important;background:var(--panel)!important;margin-bottom:0!important;box-shadow:none!important}
+  body.page-trade .grid>.v47-hide{display:none!important}
+}
+
+/* V5.9 display settings: one source of truth on desktop + mobile */
+[hidden]{display:none!important}
+.display-settings{grid-column:1/-1}
+.display-settings .setting-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.display-settings .setting-actions{display:flex;gap:8px}
+.display-settings .setting-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 14px;margin-top:12px}
+.display-settings label{display:flex;align-items:center;gap:7px;font-size:13px;color:#dbe5f7}
+.display-settings input{width:18px;height:18px}
+@media(max-width:700px){.display-settings .setting-list{grid-template-columns:repeat(2,minmax(0,1fr))}.display-settings{order:-1}}
+
+/* V5.11 single-source display visibility: wins over every mobile-page rule */
+body [data-display-target].display-off,
+body .grid > .mobile-page[data-display-target].display-off,
+body .mobile-page.mobile-active[data-display-target].display-off{display:none!important}
+.display-settings .setting-list,.display-settings .setting-actions,.display-settings .setting-note{display:none}
+.display-settings.settings-open .setting-list{display:grid}
+.display-settings.settings-open .setting-actions{display:flex}
+.display-settings.settings-open .setting-note{display:block}
+.display-settings{padding:10px 12px}
+.display-settings .setting-head{cursor:pointer;user-select:none}
+.display-settings .settings-toggle{margin-left:auto;font-size:12px;color:var(--muted)}
+@media(max-width:700px){body.page-trade #displaySettings{position:static!important;top:auto!important;z-index:auto!important;margin-bottom:8px!important}}
+
+/* V7.0 mobile trade anchor: keep coin controls + LIVE price pinned while the rest scrolls. */
+@media(max-width:700px){
+ body.page-trade .controls{position:sticky!important;top:58px!important;z-index:46!important;background:rgba(11,16,32,.985)!important;border-bottom:1px solid var(--line)!important;box-shadow:none!important;padding:8px 0!important;margin:0 0 8px!important;}
+ body.page-trade .grid>.card:first-child{position:sticky!important;top:160px!important;z-index:45!important;background:var(--panel)!important;box-shadow:0 5px 14px rgba(0,0,0,.18)!important;margin-bottom:8px!important;}
+ body.page-trade #displaySettings{position:static!important;top:auto!important;z-index:auto!important;}
+}
+
+/* V7.0: controls + actual LIVE card are one sticky anchor on mobile. */
+@media(max-width:700px){
+ body.page-trade #mobileTradeAnchor{position:sticky!important;top:58px!important;z-index:60!important;background:rgba(11,16,32,.985)!important;margin:0 -8px 8px!important;padding:8px!important;border-bottom:1px solid var(--line)!important;box-shadow:0 6px 16px rgba(0,0,0,.22)!important}
+ body.page-trade #mobileTradeAnchor .controls{position:static!important;top:auto!important;margin:0 0 8px!important;padding:0!important;background:transparent!important;border:0!important}
+ body.page-trade #mobileTradeAnchor #livePriceCard{position:static!important;top:auto!important;margin:0!important;box-shadow:none!important}
+ body.page-trade .grid>#livePriceCard{position:static!important}
+}
+
+/* V7.0 searchable instrument autocomplete */
+#tradeControls{position:relative}
+#symbolSuggestions{
+ position:absolute;left:0;top:46px;z-index:80;width:min(520px,100%);
+ max-height:330px;overflow-y:auto;background:#0d172b;border:1px solid var(--line);
+ border-radius:12px;box-shadow:0 14px 35px rgba(0,0,0,.38);padding:6px;
+}
+#symbolSuggestions[hidden]{display:none!important}
+.symbol-suggestion{display:flex;align-items:center;justify-content:space-between;width:100%;padding:11px 12px;border:0;background:transparent;color:var(--text);text-align:left;border-radius:8px;cursor:pointer}
+.symbol-suggestion:hover,.symbol-suggestion.active{background:#182640}
+.symbol-suggestion .coin{font-weight:800;font-size:15px}
+.symbol-suggestion .inst{font-size:11px;color:var(--muted);margin-left:10px}
+@media(max-width:700px){
+ #symbolSuggestions{position:absolute!important;top:52px!important;left:0!important;right:0!important;width:100%!important;max-height:48vh!important;z-index:100!important}
+}
+
+@media(max-width:700px){
+ #symbolSuggestions.mobile-open{
+   display:block!important;position:fixed!important;left:10px!important;right:10px!important;
+   top:112px!important;width:auto!important;max-height:52vh!important;overflow-y:auto!important;
+   z-index:9999!important;
+ }
+}
+
+/* V7.0 iPhone autocomplete visibility */
+@media(max-width:700px){
+ body.page-market #tradeControls{position:relative!important;overflow:visible!important;z-index:70!important}
+ body.page-market #symbolSuggestions.mobile-open{
+   display:block!important;
+   position:absolute!important;
+   left:0!important;right:0!important;top:52px!important;
+   width:100%!important;max-height:280px!important;overflow-y:auto!important;
+   z-index:99999!important;background:#0d172b!important;
+   border:1px solid #33466b!important;border-radius:12px!important;
+   box-shadow:0 14px 35px rgba(0,0,0,.55)!important;padding:6px!important;
+ }
+ body.page-market #symbolSuggestions .symbol-suggestion{
+   display:flex!important;visibility:visible!important;opacity:1!important;
+   min-height:48px!important;color:#f4f7ff!important;background:#101b31!important;
+   margin:3px 0!important;border:1px solid #263858!important;
+ }
+ body.page-market #symbolSuggestions .symbol-suggestion .coin{
+   display:block!important;visibility:visible!important;color:#fff!important;font-size:16px!important
+ }
+ body.page-market #symbolSuggestions .symbol-suggestion .inst{
+   display:block!important;visibility:visible!important;color:#9fb0cf!important;font-size:11px!important
+ }
+}
+
+.holdingDecision{margin-top:10px;padding:11px 12px;border:1px solid var(--line);border-radius:12px;background:#101a2e;line-height:1.55}
+.holdingDecision.bad{border-color:#7d3442;background:#26131b}.holdingDecision.good{border-color:#246b55;background:#10251f}.holdingDecision.warn{border-color:#725d2b;background:#241f12}
+.holdingStatus{font-weight:900;font-size:15px;margin-bottom:5px}.holdingCard.sl-hit{border-color:#8d3948;box-shadow:0 0 0 1px rgba(255,100,120,.12) inset}
+</style>
+
+</head><body><header><div><h1>STOCK SNIPER <span class="version-badge">V1.4</span></h1><div class="tag">市場 → 點幣 → 交易判定・K線・最多 5 筆手動持倉</div></div><div id="status" class="status">準備中</div></header>
+<div class="wrap"><div class="controls" id="tradeControls"><input id="symbolSearch" placeholder="搜尋台股，例如 2330 / 台積電" style="width:220px" autocomplete="off">
+<div id="symbolSuggestions" hidden></div><select id="symbol" aria-label="台股代號" title="台股代號"><option>BTC-USDT-SWAP</option></select><select id="bar" aria-label="K線週期"><option value="5m" selected>5分鐘</option><option value="15m">15分鐘</option><option value="1H">1小時</option></select><button id="refresh">重新整理</button><button id="scan">掃描市場</button></div>
+<div id="tradeSticky" style="display:none"><span id="stickySymbol"></span><span id="stickyPrice"></span></div>
+<div id="majorSection" class="card" style="margin-bottom:14px"><div class="label">市場狀況｜點選幣種直接進入交易</div><div id="majorWatch" class="majorbar" style="margin-top:10px;margin-bottom:0"></div></div>
+<div id="error" class="err"></div><div class="grid"><div id="displaySettings" class="card full display-settings"><div class="setting-head" id="displaySettingsToggle"><div><div class="label">顯示設定</div><div class="small setting-note">只控制畫面顯示，不改變背景分析與進場判定。</div></div><span class="settings-toggle" id="displaySettingsArrow">展開 ▼</span><div class="setting-actions"><button type="button" id="displayMinimal">極簡</button><button type="button" id="displayAll">全部</button></div></div><div class="setting-list">
+<label><input type="checkbox" data-display="ma" checked>MA7 / MA25</label><label><input type="checkbox" data-display="support" checked>近期支撐</label><label><input type="checkbox" data-display="resistance" checked>近期壓力</label><label><input type="checkbox" data-display="conditions" checked>進場判定條件</label><label><input type="checkbox" data-display="rsi">RSI</label><label><input type="checkbox" data-display="funding">Funding</label><label><input type="checkbox" data-display="oi">OI</label><label><input type="checkbox" data-display="cvd">CVD</label><label><input type="checkbox" data-display="signal">可解釋訊號</label><label><input type="checkbox" data-display="summary">交易結構摘要</label><label><input type="checkbox" data-display="mtf">多週期共振</label><label><input type="checkbox" data-display="risk">量價風險</label></div></div>
+<div class="card" id="livePriceCard"><div class="label">LIVE 最新成交價</div><div class="value" id="price">—</div><div class="small"><span id="liveDot" style="color:#f7c65f">● CONNECTING</span>　<span id="lastTs">—</span></div></div><div class="card v47-hide" style="display:none!important"><div class="label">Mark 標記價格</div><div class="value" id="mark">—</div><div class="small" id="markTs">—</div></div><div class="card v47-hide" style="display:none!important"><div class="label">Index 指數價格</div><div class="value" id="indexPx">—</div><div class="small" id="indexTs">—</div></div><div class="card v47-hide" style="display:none!important"><div class="label">Bid / Ask</div><div class="value" id="bbo">—</div><div class="small" id="spread">—</div></div><div class="card" data-display-target="ma"><div class="label">MA7 / MA25</div><div class="value" id="ma">—</div></div><div class="card" data-display-target="rsi"><div class="label">RSI 14</div><div class="value" id="rsi">—</div></div><div class="card" data-display-target="funding"><div class="label">量比</div><div class="value" id="fund">—</div></div>
+<div class="card" data-display-target="oi"><div class="label">成交量</div><div class="value" id="oi">—</div></div><div class="card" data-display-target="cvd"><div class="label">量價動能</div><div class="value" id="cvd">—</div></div><div class="card" data-display-target="support"><div class="label">近期支撐</div><div class="value" id="support">—</div></div><div class="card" data-display-target="resistance"><div class="label">近期壓力</div><div class="value" id="resistance">—</div></div>
+<div class="card wide" data-display-target="signal"><div class="label">可解釋訊號</div><div id="signal" class="signal neutral">—</div><ul id="reasons"></ul></div><div class="card wide" data-display-target="summary"><div class="label">交易結構摘要</div><div id="summary" style="margin-top:8px;line-height:1.7;color:#cbd5eb">—</div></div>
+<div class="card wide" data-display-target="mtf"><div class="label">多週期共振</div><div id="mtf" style="margin-top:8px;line-height:1.8">—</div></div><div class="card wide" data-display-target="risk"><div class="label">量價風險</div><div id="riskbox" style="margin-top:8px;line-height:1.8">—</div></div>
+<div class="card full"><div class="label">進場判定</div><div class="triggerbox"><div id="tradeState" class="triggerTitle neutral">⏳ 計算中</div><div id="triggerChecks" data-display-target="conditions" style="margin-top:8px">—</div><div class="small v47-internal" id="signalTime" style="margin-top:10px">—</div></div><div class="plan v47-internal"><div><div class="small">參考進場區</div><b id="entry">—</b></div><div><div class="small">停損 SL</div><b id="stop">—</b></div><div><div class="small">止盈 TP1</div><b id="tp1">—</b></div><div><div class="small">止盈 TP2 / R:R</div><b id="tp2">—</b></div></div><div class="small v47-internal" style="margin-top:8px">觸發規則以「目前選擇週期的已收盤 K 棒」判定；5m、15m、1H 各自獨立，不使用尚未收完的 K 棒。訊號是規則化市場結構提示，不代表獲利保證。</div></div>
+<div id="positionSection" class="card full"><div class="label">交易｜先確認目前幣種狀況，再建立進場計畫</div>
+<div id="tradeContext" class="posbox" style="margin-bottom:10px">
+  <div style="display:flex;justify-content:space-between;gap:10px;align-items:flex-start;flex-wrap:wrap">
+    <div><div class="small">目前準備交易</div><div id="tradeCtxSymbol" class="possymbol">—</div></div>
+    <div style="text-align:right"><div class="small">LIVE</div><div id="tradeCtxPrice" class="value">—</div></div>
+  </div>
+  <div class="metricgrid" style="margin-top:8px">
+    <div><div class="small">方向 / Score</div><b id="tradeCtxSignal">—</b></div>
+    <div><div class="small">進場判定</div><b id="tradeCtxState">—</b></div>
+  </div>
+  <div id="tradeCtxChecks" class="triggerbox" style="margin-top:8px">—</div>
+  <div class="plan" style="margin-top:8px">
+    <div><div class="small">參考進場區</div><b id="tradeCtxEntry">—</b></div>
+    <div><div class="small">技術 SL</div><b id="tradeCtxStop">—</b></div>
+    <div><div class="small">TP1</div><b id="tradeCtxTp1">—</b></div>
+    <div><div class="small">TP2</div><b id="tradeCtxTp2">—</b></div>
+  </div>
+  <div class="small" style="margin-top:8px">交易頁會同步目前分析幣種與所選主週期的已收盤 K 棒進場判定。LONG / SHORT 只是方向；只有顯示「進場條件已觸發」才代表 Trigger 已成立，仍需再確認風控與實際成交價。</div>
+</div>
+<div class="label">進場計畫 / 手動持倉追蹤</div><div class="posbox"><div id="positionState" class="triggerTitle neutral">尚未建立持倉</div><div id="positionSymbol" class="possymbol">尚未鎖定幣種</div><div class="formgrid"><label class="small">風控模式<select id="riskMode"><option value="fixed">一般買進模式</option><option value="pro">風險控制模式</option></select></label><label class="small">方向<select id="posSide"><option value="long">LONG 做多</option><option value="short">SHORT 做空</option></select></label><label class="small">預計 / 實際成交價<input id="posEntry" type="number" step="any" placeholder="可用目前價"></label><label class="small" id="marginLabel">預計投入金額 TWD<input id="accountEquity" type="number" step="any" value="100"></label><label class="small">單筆最大可接受虧損 TWD（1R）<input id="maxLoss" type="number" step="any" value="5"></label><label class="small">股票部位<input id="leverage" type="number" min="1" max="125" value="20"></label><label class="small" id="manualTechWrap" style="display:none">技術 SL（可手動覆寫）<input id="manualTechSL" type="number" step="any" placeholder="留空＝採系統技術SL"></label><label class="small" id="actualMarginWrap" style="display:none">實際預計投入金額 USDT<input id="actualMargin" type="number" step="any" placeholder="計畫後自動帶入，可自行修改"></label></div><div id="modeHelp" class="small" style="margin-top:8px">固定倉位：預計投入金額 × 股票部位決定名義倉位，再反推 -1R 資金SL。</div><div class="actions"><button id="useLive">帶入目前價</button><button id="calcPlan">先計算進場計畫</button><button id="enterPosition">我已進場・開始追蹤</button><button id="closePosition">結束持倉</button></div><div id="preTradePlan" class="metricgrid" style="margin-top:10px"></div><div id="preTradeAlert"></div><div id="positionMetrics" class="metricgrid"></div><div id="riskAlert"></div><div class="small" style="margin-top:8px">先看「進場計畫」再下單。固定投入模式：你指定預計投入金額＋股票部位＋1R，系統反推資金SL。風險控制模式：技術SL＋1R反推最大名義倉位；股票部位只顯示最低初始保證金需求與安全檢查。建立持倉後幣種鎖定；即時U盈虧、ROE皆未扣手續費、滑價與資金費。</div></div></div>
+<div id="chartSection" class="card full"><div class="label">K 線圖</div><canvas id="chart" width="1200" height="520"></canvas><div class="small" style="margin-top:8px">綠K＝收漲、紅K＝收跌；藍線 MA7、黃線 MA25。滑鼠滾輪＝放大/縮小；按住拖曳＝左右移動；移到 K 棒上可看 OHLC/成交量。雙擊圖表回到最新 K 棒。</div></div>
+<div id="holdingsSection" class="card full"><div class="label">我的持倉｜最多 5 筆</div><div class="small" style="margin:6px 0 10px">手動建立後鎖定幣種；即時盈虧未扣手續費、滑價與資金費。</div><div id="holdingCards"></div></div>
+<div id="radarSection" class="card full"><div class="label">輕量交易雷達｜僅顯示 5 個活躍 台股，降低手機負載</div><div class="small" id="scanInfo" style="margin-top:6px">載入中…</div><div class="radarWrap"><table class="radar"><thead><tr><th>標的</th><th>價格</th><th>RSI</th><th>Funding</th><th>OI</th><th>24H活躍量</th><th>15m/1H/4H</th><th>Score</th><th>結構</th></tr></thead><tbody id="radar"></tbody></table></div></div>
+</div></div>
+<nav class="iosnav"><button data-page="market" class="active"><b>◎</b>市場狀況</button><button data-page="trade"><b>◇</b>交易</button><button data-page="holding"><b>▣</b>持倉</button></nav>
+<script>
+document.querySelectorAll('#tradeContext').forEach(el=>el.style.setProperty('display','none','important'));
+const STOCKS=[{id:'1101',name:'台泥'},{id:'1216',name:'統一'},{id:'1301',name:'台塑'},{id:'1303',name:'南亞'},{id:'2002',name:'中鋼'},{id:'2207',name:'和泰車'},{id:'2303',name:'聯電'},{id:'2308',name:'台達電'},{id:'2317',name:'鴻海'},{id:'2324',name:'仁寶'},{id:'2330',name:'台積電'},{id:'2345',name:'智邦'},{id:'2357',name:'華碩'},{id:'2379',name:'瑞昱'},{id:'2382',name:'廣達'},{id:'2408',name:'南亞科'},{id:'2412',name:'中華電'},{id:'2454',name:'聯發科'},{id:'2603',name:'長榮'},{id:'2609',name:'陽明'},{id:'2615',name:'萬海'},{id:'2618',name:'長榮航'},{id:'2880',name:'華南金'},{id:'2881',name:'富邦金'},{id:'2882',name:'國泰金'},{id:'2884',name:'玉山金'},{id:'2885',name:'元大金'},{id:'2886',name:'兆豐金'},{id:'2887',name:'台新新光金'},{id:'2890',name:'永豐金'},{id:'2891',name:'中信金'},{id:'2892',name:'第一金'},{id:'3008',name:'大立光'},{id:'3017',name:'奇鋐'},{id:'3034',name:'聯詠'},{id:'3231',name:'緯創'},{id:'3661',name:'世芯-KY'},{id:'3711',name:'日月光投控'},{id:'4904',name:'遠傳'},{id:'4938',name:'和碩'},{id:'5871',name:'中租-KY'},{id:'5880',name:'合庫金'},{id:'6505',name:'台塑化'},{id:'6669',name:'緯穎'},{id:'2301',name:'光寶科'},{id:'2356',name:'英業達'},{id:'2376',name:'技嘉'},{id:'2377',name:'微星'},{id:'2395',name:'研華'},{id:'3045',name:'台灣大'},{id:'5876',name:'上海商銀'},{id:'9904',name:'寶成'},{id:'0050',name:'元大台灣50',dist:'半年配｜1、7月附近',type:'ETF'},{id:'0056',name:'元大高股息',dist:'季配｜1、4、7、10月附近',type:'ETF'},{id:'006208',name:'富邦台50',dist:'半年配｜7、11月附近',type:'ETF'},{id:'00878',name:'國泰永續高股息',dist:'季配｜2、5、8、11月附近',type:'ETF'},{id:'00919',name:'群益台灣精選高息',dist:'季配｜3、6、9、12月附近',type:'ETF'},{id:'00929',name:'復華台灣科技優息',dist:'月配｜每月',type:'ETF'},{id:'00940',name:'元大台灣價值高息',dist:'月配｜每月',type:'ETF'},{id:'00713',name:'元大台灣高息低波',dist:'季配｜3、6、9、12月附近',type:'ETF'},{id:'00881',name:'國泰台灣5G+',dist:'半年配｜1、8月附近',type:'ETF'},{id:'00915',name:'凱基優選高股息30',dist:'季配｜3、6、9、12月附近',type:'ETF'}];
+let activeSym='2330',currentBar='5m',positions=JSON.parse(localStorage.getItem('stockSniperPositions')||'[]');const $=id=>document.getElementById(id);
+const nameOf=id=>STOCKS.find(x=>x.id===id)?.name||id; const pf=x=>Number.isFinite(+x)?(+x).toLocaleString('zh-TW',{maximumFractionDigits:2}):'—';
+function savePositions(){localStorage.setItem('stockSniperPositions',JSON.stringify(positions))}
+function matches(q){q=(q||'').trim().toLowerCase();return STOCKS.filter(x=>!q||x.id.includes(q)||x.name.toLowerCase().includes(q)).slice(0,30)}
+function suggest(){let b=$('symbolSuggestions'),i=$('symbolSearch');if(!b||!i)return;let a=matches(i.value);b.innerHTML=a.length?a.map((x,n)=>`<button type="button" class="symbol-suggestion${n?'':' active'}" data-inst="${x.id}"><span class="coin">${x.id} ${x.name}</span><span class="inst">${x.type==='ETF'?'ETF · '+x.dist:'TW'}</span></button>`).join(''):'<div class="small" style="padding:12px">找不到內建台股</div>';b.hidden=false;b.classList.add('mobile-open')}
+function noData(){
+ currentBar=$('bar')?.value||'5m';if($('price'))$('price').textContent='—';
+ if($('liveDot')){$('liveDot').textContent='● 等待台股 LIVE';$('liveDot').style.color='#f7c65f'}
+ if($('lastTs'))$('lastTs').textContent='尚未連接即時台股行情橋接器';
+ ['ma','rsi','fund','oi','cvd','support','resistance'].forEach(id=>{if($(id))$(id).textContent='—'});
+ ['entryDecision','triggerBox','signalBox','conditions','mtf','riskbox','summary'].forEach(id=>{if($(id))$(id).innerHTML=`<span class="neutral">${activeSym} ${nameOf(activeSym)}｜${currentBar} 主週期<br>行情未連線：不產生進場、加倉或止損假訊號。</span>`});
+ if($('tradeCtxSymbol'))$('tradeCtxSymbol').textContent=`${activeSym} ${nameOf(activeSym)}`;if($('stickySymbol'))$('stickySymbol').textContent=`${activeSym} ${nameOf(activeSym)}`;if($('stickyBar'))$('stickyBar').textContent=currentBar
+}
+function choose(id){activeSym=id;if($('symbol'))$('symbol').value=id;if($('symbolSearch'))$('symbolSearch').value=`${id} ${nameOf(id)}`;if($('status'))$('status').textContent=`${id} ${nameOf(id)}｜等待台股行情`;startStockLive();if(window.dhShowPage&&matchMedia('(max-width:700px)').matches)window.dhShowPage('trade')}
+function renderHoldingCards(){let b=$('holdingCards');if(!b)return;b.innerHTML=positions.length?positions.map((p,i)=>`<div class="holdingCard"><div class="holdingTop"><div><b>${i+1}. ${p.id} ${nameOf(p.id)}</b><div class="small">${p.side||'LONG'}・${p.bar||'5m'}・投入 NT$${pf(p.amount)}</div></div><div class="holdingPnl">等待 LIVE</div></div><div class="holdingDecision warn"><div class="holdingStatus">🟡 行情尚未連線</div><div class="small">保留 V7.1 的 SL / TP 與持倉再評估架構；即時行情接入後才會啟用觸發判定。</div></div></div>`).join(''):'<div class="triggerbox">目前沒有手動持倉。</div>'}
+
+const DAYTRADE_IDS=['2330','2317','2454','2382','3231','3017','3661','2603','2609','2376'];
+const INVEST_IDS=['2330','2412','3045','4904','2881','2882','2886','2891','2892','5880'];
+const ETF_IDS=['0050','0056','006208','00878','00919','00929','00940','00713','00881','00915'];
+function renderIdeas(mode='day'){
+ const grid=$('ideaGrid'),ex=$('ideaExplain');if(!grid)return;
+ const ids=mode==='day'?DAYTRADE_IDS:(mode==='etf'?ETF_IDS:INVEST_IDS);
+ if(ex)ex.textContent=mode==='day'?'當沖觀察池：目前先列高流動性候選；接入 LIVE 後再依量比、VWAP、波動、成交額與收盤訊號即時排序。':(mode==='etf'?'ETF 專區：顯示配息頻率／月份參考；實際除息與配息日期仍以投信最新公告為準。':'存股觀察池：這裡是研究候選，不做買進排名；後續可加入股利、殖利率、EPS、配息穩定度與估值資料。');
+ grid.innerHTML=ids.map(id=>`<div class="ideaItem" data-idea="${id}"><b>${id} ${nameOf(id)}</b><div class="reason">${STOCKS.find(x=>x.id===id)?.dist?'配息月份：'+STOCKS.find(x=>x.id===id).dist+'<br>':''}${mode==='day'?'等待 LIVE 後計算當沖條件':'等待基本面資料後計算存股指標'}</div></div>`).join('');
+ grid.querySelectorAll('[data-idea]').forEach(e=>e.onclick=()=>choose(e.dataset.idea));
+ $('dayTradeTab')?.classList.toggle('active',mode==='day');$('investTab')?.classList.toggle('active',mode==='invest');$('etfTab')?.classList.toggle('active',mode==='etf');
+}
+
+const TWSE_MIS='https://mis.twse.com.tw/stock/api/getStockInfo.jsp';
+let liveTimer=null,liveQuote=null,minuteTicks=[];
+function marketChannel(id){return 'tse_'+id+'.tw'}
+async function fetchLiveQuote(id){
+ const u=TWSE_MIS+'?ex_ch='+encodeURIComponent(marketChannel(id))+'&json=1&delay=0&_='+Date.now();
+ const r=await fetch(u,{cache:'no-store'});if(!r.ok)throw new Error('quote '+r.status);
+ const j=await r.json(),q=j.msgArray&&j.msgArray[0];if(!q)throw new Error('no quote');
+ const n=x=>{let v=parseFloat(x);return Number.isFinite(v)?v:null};
+ return {id,name:q.n||nameOf(id),last:n(q.z)||n(q.y),prev:n(q.y),open:n(q.o),high:n(q.h),low:n(q.l),vol:n(q.v),totalVol:n(q.tv),time:q.t||'',date:q.d||'',bid:q.b||'',ask:q.a||''};
+}
+function aggregateBars(ticks,mins){
+ const map=new Map();
+ for(const x of ticks){let d=new Date(x.ts),m=d.getHours()*60+d.getMinutes(),bucket=Math.floor(m/mins)*mins,key=d.toDateString()+'-'+bucket;
+  if(!map.has(key))map.set(key,{ts:x.ts,open:x.p,high:x.p,low:x.p,close:x.p,volume:x.v||0});
+  else{let k=map.get(key);k.high=Math.max(k.high,x.p);k.low=Math.min(k.low,x.p);k.close=x.p;k.volume+=(x.v||0)}
+ } return [...map.values()];
+}
+function stockBarMinutes(){return currentBar==='15m'?15:currentBar==='1H'?60:5}
+function sma(a,n){if(a.length<n)return null;return a.slice(-n).reduce((x,y)=>x+y,0)/n}
+function rsiSimple(a,n=14){if(a.length<=n)return null;let g=0,l=0;for(let i=a.length-n;i<a.length;i++){let d=a[i]-a[i-1];if(d>0)g+=d;else l-=d}if(!l)return 100;let rs=g/l;return 100-100/(1+rs)}
+function renderStockLive(q){
+ liveQuote=q;let last=q.last;
+ if($('price'))$('price').textContent=pf(last);if($('liveDot')){$('liveDot').textContent='● TWSE LIVE';$('liveDot').style.color='#4bd49b'}
+ if($('lastTs'))$('lastTs').textContent=`${q.date} ${q.time}｜昨收 ${pf(q.prev)}｜高 ${pf(q.high)}｜低 ${pf(q.low)}｜量 ${q.totalVol??'—'}`;
+ if($('tradeCtxSymbol'))$('tradeCtxSymbol').textContent=`${activeSym} ${q.name}`;if($('stickySymbol'))$('stickySymbol').textContent=`${activeSym} ${q.name}`;if($('stickyBar'))$('stickyBar').textContent=currentBar;
+ let ts=Date.now(); if(last){minuteTicks.push({ts,p:last,v:q.vol||0});minuteTicks=minuteTicks.filter(x=>ts-x.ts<21600000)}
+ let bars=aggregateBars(minuteTicks,stockBarMinutes()),c=bars.map(x=>x.close),m7=sma(c,7),m25=sma(c,25),rv=rsiSimple(c);
+ if($('ma'))$('ma').textContent=(m7?pf(m7):'—')+' / '+(m25?pf(m25):'—');if($('rsi'))$('rsi').textContent=rv?rv.toFixed(1):'—';
+ if($('support'))$('support').textContent=pf(q.low);if($('resistance'))$('resistance').textContent=pf(q.high);
+ if($('oi'))$('oi').textContent=q.totalVol??'—';if($('fund'))$('fund').textContent=q.prev?(((last-q.prev)/q.prev)*100).toFixed(2)+'%':'—';
+ if($('cvd'))$('cvd').textContent='TWSE 成交';
+ let ready=bars.length>=8;
+ let txt=ready?(m7&&last>m7?'🟢 多方結構觀察｜等待完整收盤條件':'🟡 尚未形成買進條件'):'🟡 累積盤中 K 棒中';
+ ['entryDecision','triggerBox','signalBox'].forEach(id=>{if($(id))$(id).innerHTML=`<span class="${txt.includes('🟢')?'good':'neutral'}">${activeSym} ${q.name}｜${currentBar}<br>${txt}<br>一般股票模式預設只做多，不產生 SHORT 建議。</span>`});
+}
+async function refreshStockLive(){
+ try{let q=await fetchLiveQuote(activeSym);renderStockLive(q);if($('status'))$('status').textContent=`${activeSym} ${q.name}｜TWSE ${q.time||'LIVE'}`}
+ catch(e){if($('liveDot')){$('liveDot').textContent='● LIVE 連線失敗';$('liveDot').style.color='#ff7d8c'};if($('lastTs'))$('lastTs').textContent='TWSE MIS 無法由目前瀏覽器直接取得；可改接行情橋接器。'}
+}
+function startStockLive(){clearInterval(liveTimer);refreshStockLive();liveTimer=setInterval(refreshStockLive,5000)}
+function calcStockPlan(){
+ if(!liveQuote||!liveQuote.last){if($('preTradeAlert'))$('preTradeAlert').innerHTML='<div class="dangerbox">尚未取得 LIVE 股價。</div>';return}
+ const entry=liveQuote.last, techSL=liveQuote.low&&liveQuote.low<entry?liveQuote.low:entry*0.98;
+ const maxLoss=Number($('maxLoss')?.value)||1000, riskPerShare=Math.max(entry-techSL,entry*.005);
+ const shares=Math.max(1,Math.floor(maxLoss/riskPerShare)),amount=shares*entry;
+ const fee=amount*0.001425, tax=amount*0.003;
+ if($('preTradeAlert'))$('preTradeAlert').innerHTML=`<div class="triggerbox"><b>股票風險控制試算</b><br>LIVE / Entry：${pf(entry)}<br>技術 SL 參考：${pf(techSL)}<br>最大風險：NT$${Math.round(maxLoss).toLocaleString()}<br>風控股數：約 ${shares.toLocaleString()} 股（${(shares/1000).toFixed(3)} 張）<br>買進金額：約 NT$${Math.round(amount).toLocaleString()}<br><span class="small">手續費以牌告 0.1425% 粗估；賣出證交稅依標的/交易型態另計，實際以券商成交為準。</span></div>`;
+}
+function setup(){
+ let sel=$('symbol');sel.innerHTML=STOCKS.map(x=>`<option value="${x.id}">${x.id} · ${x.name}</option>`).join('');
+ $('symbolSearch')?.addEventListener('focus',suggest);$('symbolSearch')?.addEventListener('input',suggest);$('symbolSearch')?.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();let a=matches(e.target.value);if(a[0])choose(a[0].id)}});
+ $('symbolSuggestions')?.addEventListener('click',e=>{let b=e.target.closest('.symbol-suggestion');if(b){choose(b.dataset.inst);$('symbolSuggestions').hidden=true}});
+ sel?.addEventListener('change',e=>choose(e.target.value));$('bar')?.addEventListener('change',()=>{currentBar=$('bar').value;renderStockLive(liveQuote||{});});$('refresh')?.addEventListener('click',refreshStockLive);
+ if($('scanInfo'))$('scanInfo').textContent='台股雷達已沿用 V7.1 版型；接入行情後依成交量、VWAP、量價動能與多週期結構掃描。';
+ if($('radar'))$('radar').innerHTML=STOCKS.slice(0,5).map(x=>`<tr><td>${x.id} ${x.name}</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="neutral">等待 LIVE</td></tr>`).join('');
+ $('useLive')?.addEventListener('click',()=>{if(liveQuote&&$('actualEntry'))$('actualEntry').value=liveQuote.last});$('calcPlan')?.addEventListener('click',calcStockPlan);$('enterPosition')?.addEventListener('click',calcStockPlan);
+ $('dayTradeTab')?.addEventListener('click',()=>renderIdeas('day'));$('investTab')?.addEventListener('click',()=>renderIdeas('invest'));$('etfTab')?.addEventListener('click',()=>renderIdeas('etf'));renderIdeas('day');choose('2330');renderHoldingCards()
+}
+window.addEventListener('DOMContentLoaded',setup);
+</script></body></html>
