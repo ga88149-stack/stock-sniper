@@ -1,10 +1,10 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no"><meta name="theme-color" content="#0b1020"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="DATA SNIPER"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png"><title>DATA SNIPER V9.1</title>
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no"><meta name="theme-color" content="#0b1020"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="DATA SNIPER"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png"><title>DATA SNIPER V9.46</title>
 <style>
 :root{--bg:#0b1020;--panel:#121a2f;--panel2:#17213a;--text:#e9eefc;--muted:#91a0bd;--line:#293755;--good:#3ddc97;--bad:#ff6b7a;--warn:#f7c65f;--blue:#6ca6ff}*{box-sizing:border-box}body{margin:0;font-family:system-ui,"Microsoft JhengHei",sans-serif;background:var(--bg);color:var(--text)}header{padding:18px 22px;border-bottom:1px solid var(--line);display:flex;gap:16px;align-items:center;flex-wrap:wrap}h1{font-size:20px;margin:0}.tag{font-size:12px;color:var(--muted)}select,button,input{background:var(--panel2);color:var(--text);border:1px solid var(--line);padding:9px 12px;border-radius:8px}button{cursor:pointer}input{background:var(--panel2);color:var(--text);border:1px solid var(--line);padding:9px 10px;border-radius:8px;width:100%}.formgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin-top:10px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.posbox{border:1px solid var(--line);background:var(--panel2);border-radius:10px;padding:14px}.metricgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:10px}.metric{background:#0e1528;padding:10px;border-radius:8px}.dangerbox{border:1px solid var(--bad);padding:10px;border-radius:8px;margin-top:10px;color:#ffd1d6}.okbox{border:1px solid var(--good);padding:10px;border-radius:8px;margin-top:10px;color:#c9ffe7}@media(max-width:800px){.formgrid,.metricgrid{grid-template-columns:repeat(2,1fr)}}.wrap{max-width:1280px;margin:auto;padding:18px}.controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}.label{color:var(--muted);font-size:12px}.value{font-size:22px;font-weight:700;margin-top:5px}.wide{grid-column:span 2}.full{grid-column:1/-1}canvas{width:100%;height:520px;background:#0e1528;border-radius:9px}.signal{font-size:26px;font-weight:800}.good{color:var(--good)}.bad{color:var(--bad)}.neutral{color:var(--warn)}ul{margin:8px 0 0;padding-left:20px;color:#cbd5eb}.radar{width:100%;border-collapse:collapse;margin-top:8px}.radar th,.radar td{padding:10px;border-bottom:1px solid var(--line);text-align:right}.radar th:first-child,.radar td:first-child{text-align:left}.status{color:var(--muted);font-size:13px}.pill{display:inline-block;padding:4px 8px;border:1px solid var(--line);border-radius:999px;font-size:12px;margin:2px}.plan{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px}.plan>div{background:var(--panel2);padding:10px;border-radius:8px}.small{font-size:12px;color:var(--muted)}.err{color:var(--bad);white-space:pre-wrap}.triggerbox{border:1px solid var(--line);border-radius:10px;padding:14px;background:var(--panel2);margin-top:10px}.triggerTitle{font-size:22px;font-weight:800}.checkrow{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid var(--line)}.checkrow:last-child{border-bottom:0}.ok{color:var(--good);font-weight:700}.no{color:var(--warn);font-weight:700}@media(max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}.wide{grid-column:1/-1}}@media(max-width:800px){.plan{grid-template-columns:repeat(2,1fr)}}@media(max-width:500px){.plan{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.wide{grid-column:span 1}.value{font-size:19px}}
 .majorbar{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:14px}.majorcard{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px;cursor:pointer;min-width:0}.majorcard:hover{border-color:#52698f}.majorname{font-weight:800;font-size:14px}.majorprice{font-size:19px;font-weight:800;margin:5px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.majorinfo{font-size:12px;color:var(--muted);line-height:1.5}.positionLock{display:inline-block;margin-left:8px;padding:3px 7px;border:1px solid var(--good);border-radius:999px;color:var(--good);font-size:12px}.possymbol{font-size:16px;font-weight:800;margin:6px 0 10px;color:#cfe1ff}@media(max-width:900px){.majorbar{grid-template-columns:repeat(2,1fr)}}@media(max-width:500px){.majorbar{grid-template-columns:1fr}}
 
 /* iPhone / PWA */
-html,body{overscroll-behavior-y:none}body{padding-top:env(safe-area-inset-top);padding-bottom:calc(74px + env(safe-area-inset-bottom))}header{position:sticky;top:0;z-index:20;background:rgba(11,16,32,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding-left:max(14px,env(safe-area-inset-left));padding-right:max(14px,env(safe-area-inset-right))}.iosnav{display:none}.radarWrap{overflow-x:auto;-webkit-overflow-scrolling:touch}.radar{min-width:920px}.majorbar{-webkit-overflow-scrolling:touch}.touchHint{display:none}
+html,body{overscroll-behavior-y:auto;overflow-y:auto!important;height:auto!important;min-height:100%!important}body{padding-top:env(safe-area-inset-top);padding-bottom:calc(74px + env(safe-area-inset-bottom))}header{position:sticky;top:0;z-index:20;background:rgba(11,16,32,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding-left:max(14px,env(safe-area-inset-left));padding-right:max(14px,env(safe-area-inset-right))}.iosnav{display:none}.radarWrap{overflow-x:auto;-webkit-overflow-scrolling:touch}.radar{min-width:920px}.majorbar{-webkit-overflow-scrolling:touch}.touchHint{display:none}
 @media(max-width:700px){header{padding:11px 14px}h1{font-size:17px}.tag{font-size:10px}.wrap{padding:10px}.controls{display:grid;grid-template-columns:1fr 92px;gap:8px}.controls #symbolSearch{width:100%!important;grid-column:1/-1}.controls #symbol{min-width:0;width:100%}.controls button{padding:10px 8px}.majorbar{display:flex;overflow-x:auto;gap:8px;scroll-snap-type:x proximity;padding-bottom:4px}.majorcard{flex:0 0 145px;scroll-snap-align:start}.majorprice{font-size:16px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.card{padding:11px;border-radius:10px}.wide,.full{grid-column:1/-1}.value{font-size:18px}.signal{font-size:21px}.formgrid{grid-template-columns:1fr 1fr}.metricgrid{grid-template-columns:1fr 1fr}.plan{grid-template-columns:1fr 1fr}canvas{height:430px;touch-action:none}.radar th,.radar td{padding:8px;font-size:12px}.iosnav{display:grid;position:fixed;z-index:50;bottom:0;left:0;right:0;grid-template-columns:repeat(4,1fr);background:rgba(14,21,40,.96);border-top:1px solid var(--line);padding:7px 8px calc(7px + env(safe-area-inset-bottom));backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}.iosnav button{border:0;background:transparent;padding:7px 2px;font-size:11px;color:var(--muted)}.iosnav button b{display:block;font-size:18px;color:var(--text);margin-bottom:2px}.touchHint{display:block}.checkrow{font-size:13px}.posbox{padding:10px}.actions button{flex:1;min-width:120px}}
 @media(max-width:390px){.grid{grid-template-columns:1fr 1fr}.formgrid,.metricgrid,.plan{grid-template-columns:1fr}.majorcard{flex-basis:136px}.value{font-size:17px}}
 
@@ -241,10 +241,224 @@ body .mobile-page.mobile-active[data-display-target].display-off{display:none!im
 .v99planbox{margin:12px 0;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--panel2);font-size:12px;line-height:1.7;white-space:normal}
 .v99planbox b{font-size:13px}.v99planbox .good{color:#22c55e}.v99planbox .warn{color:#f59e0b}.v99planbox .bad{color:#ef4444}
 .v99reviewbtn{white-space:nowrap}
-</style><style>.v911sticky{display:none!important}.v911alertgood{color:#22c55e}.v911alertwarn{color:#f59e0b}.v911alertbad{color:#ef4444}.v911flow{padding:10px 12px;margin:8px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel2);font-size:12px;line-height:1.6}</style><script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script><script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script><script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script></head><body><header><div><h1>DATA SNIPER <span class="version-badge">V9.32</span></h1><div class="tag">高確認模式｜市場 Regime → 趨勢 → 位置 → Retest → Trigger → Risk Gate</div></div><div style="margin-left:auto;text-align:right"><div id="status" class="status">準備中</div><div id="analysisClock" class="status" style="font-size:11px;margin-top:3px">最後分析：—｜下一次K棒確認：—</div></div><div class="ds-authbar"><span id="dsCloud" class="ds-cloud">☁ 尚未登入</span><span id="dsUser" class="ds-user"></span><button id="dsLoginBtn" type="button">登入 / 註冊</button><button id="dsLogoutBtn" type="button" style="display:none">登出</button></div></header>
+</style><style>.v911sticky{display:none!important}.v911alertgood{color:#22c55e}.v911alertwarn{color:#f59e0b}.v911alertbad{color:#ef4444}.v911flow{padding:10px 12px;margin:8px 0;border:1px solid var(--line);border-radius:10px;background:var(--panel2);font-size:12px;line-height:1.6}</style><script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script><script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script><script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script><style id="v933-ui-redesign">
+/* V9.33 UI redesign — visual layer only; trading/Firebase logic unchanged */
+:root{--bg:#070d19;--panel:#10182b;--panel2:#151f36;--text:#f2f6ff;--muted:#8f9db8;--line:#263654;--accent:#5f8fff;--good:#43dda0;--bad:#ff6678;--warn:#f6c55d;--blue:#73adff;--shadow:0 10px 28px rgba(0,0,0,.20)}
+body{background:radial-gradient(circle at 50% -180px,#152342 0,#0a1120 34%,#070d19 72%);letter-spacing:.01em}
+header{border-bottom:1px solid rgba(119,151,205,.16);box-shadow:0 8px 26px rgba(0,0,0,.16)}
+header h1{font-weight:900;letter-spacing:.035em}.version-badge{font-size:.68em;color:#91a3c6;margin-left:7px;letter-spacing:.02em}
+.wrap{max-width:1320px}.card,#v9EdgeSection,.posbox{box-shadow:var(--shadow);border-color:rgba(104,137,194,.24)}
+.card{background:linear-gradient(180deg,rgba(17,26,47,.98),rgba(13,21,39,.98))}
+.controls input,.controls select,.v96card input,.v96card select{box-shadow:inset 0 1px 0 rgba(255,255,255,.025)}
+#livePriceCard{background:linear-gradient(135deg,#121d35,#0f192e);border-color:#31466d}
+#livePriceCard .value{font-size:30px;letter-spacing:.015em}
+#livePriceCard .small{margin-top:4px}
+#v9EdgeSection{overflow:hidden;background:linear-gradient(180deg,rgba(17,27,49,.99),rgba(12,20,37,.99));border-color:#304263}
+#v9EdgeSection>.label{font-size:11px;text-transform:uppercase;letter-spacing:.08em}
+.v96context{font-size:19px;line-height:1.35;margin:7px 0 14px}
+.v96prob{gap:12px}.v96prob>div{height:154px;min-height:154px;max-height:154px;display:grid;grid-template-rows:18px 54px 28px 36px;align-content:start;padding:14px 16px;border-radius:14px;background:linear-gradient(180deg,#17233e,#131e35);border-color:#314366;overflow:hidden}
+.v96prob span{font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.v96prob b{font-size:38px;line-height:54px;margin:0;font-variant-numeric:tabular-nums;letter-spacing:-.025em}.v96prob small{font-size:11px;line-height:17px;height:34px;overflow:hidden;margin:0}.v96prob #v920LongMetrics,.v96prob #v920ShortMetrics{margin:0!important;font-size:14px!important;line-height:20px!important;height:40px;white-space:normal;overflow:visible;text-overflow:clip}.v96prob .evline{display:block;font-size:14px!important;line-height:20px!important;height:20px!important;white-space:nowrap!important;overflow:visible!important;color:#dce7ff;font-weight:800}
+.v96row{margin-top:14px;gap:10px}.v96card label{font-size:12px}.v96card input,.v96card select{min-height:48px;border-radius:11px;padding:10px 12px;font-size:16px}
+.v96mode{gap:10px}.v96metric{min-height:76px;display:flex;flex-direction:column;justify-content:center;border-radius:12px!important}.v96metric b{font-size:18px;font-variant-numeric:tabular-nums}
+.v96system{padding:14px;border-radius:14px!important;background:linear-gradient(180deg,#141f37,#111a2f)!important}.v96title b{font-size:14px}.v96plan{gap:8px}.v96plan>div{min-height:72px;background:rgba(8,14,27,.28);display:flex;flex-direction:column;justify-content:center}.v96plan b{font-variant-numeric:tabular-nums}
+#v914RiskCompare,.v96msg{border:1px solid rgba(105,138,194,.22)!important;background:#101a30!important;border-radius:11px!important}
+.v96actions button{border-radius:11px;min-height:46px}.v96actions button:hover{border-color:#5274ad}.v96create{min-height:58px;border-radius:13px;background:linear-gradient(135deg,#507ff1,#6c92f5);box-shadow:0 10px 24px rgba(62,104,210,.20);letter-spacing:.03em}
+#v932PerformanceSection,#holdingsSection{background:linear-gradient(180deg,#111a30,#0d1629)}
+.v97performance>div,.v97bands,.v96stats>div{border-radius:12px;background:#141f37}.v97performance>div{min-height:78px;display:flex;flex-direction:column;justify-content:center}.v97performance b{font-variant-numeric:tabular-nums;font-size:21px}.v96stats>div{min-height:70px;display:flex;flex-direction:column;justify-content:center}
+.v9table{border-collapse:separate;border-spacing:0}.v9table th{position:sticky;top:0;background:#111a30;color:#91a3c6;font-size:10px;letter-spacing:.03em}.v9table td{padding-top:10px;padding-bottom:10px}
+.iosnav{border-top-color:rgba(119,151,205,.20);box-shadow:0 -10px 30px rgba(0,0,0,.22)}
+@media(min-width:701px){#v9EdgeSection{padding:20px}.v96row{grid-template-columns:repeat(3,minmax(0,1fr))}.v96prob>div{height:164px;min-height:164px;max-height:164px}.v96prob b{font-size:42px}}
+@media(max-width:700px){
+ body{background:#080e1b}.wrap{padding:8px 9px 16px}header{min-height:64px;padding:10px 14px}header h1{font-size:17px}.ds-authbar{position:absolute;right:10px;top:9px;width:auto!important}.ds-cloud,.ds-user{font-size:9px}.ds-authbar button{padding:6px 8px;font-size:10px}
+ #analysisClock{font-size:9px!important;max-width:48%;line-height:1.3}#status{font-size:10px!important}
+ .controls{top:64px;padding:8px 9px;margin:0 -9px 9px;gap:8px}.controls #symbolSearch{border-radius:12px;min-height:46px}.controls #symbol,.controls #bar{min-height:46px;border-radius:12px}
+ .card{border-radius:16px;margin-bottom:9px!important}.grid>.card{margin-bottom:9px}
+ #livePriceCard{padding:15px 14px}#livePriceCard .label{font-size:11px}#livePriceCard .value{font-size:28px;margin-top:6px}
+ #v9EdgeSection{padding:13px!important;border-radius:17px}.v96context{font-size:17px;margin:6px 0 12px;line-height:1.35}
+ .v96prob{grid-template-columns:1fr 1fr!important;gap:8px}.v96prob>div{height:148px!important;min-height:148px!important;max-height:148px!important;padding:12px 11px;grid-template-rows:30px 48px 40px 30px}.v96prob span{font-size:10px;white-space:normal;line-height:15px;height:30px}.v96prob b{font-size:35px;line-height:50px}.v96prob #v920LongMetrics,.v96prob #v920ShortMetrics{font-size:13px!important;line-height:19px!important;height:38px}.v96prob small{font-size:10px;line-height:15px;height:30px}
+ .v96row{grid-template-columns:1fr 1fr!important}.v96row label:nth-child(3){grid-column:1/-1}.v96mode{grid-template-columns:1fr 1fr!important}.v96card input,.v96card select{min-height:50px;font-size:16px}.v96metric{min-height:72px;padding:10px!important}
+ .v96system{margin-top:10px;padding:12px!important}.v96plan{grid-template-columns:1fr 1fr!important}.v96plan>div{min-height:68px}.v96plan>div:last-child{grid-column:1/-1}
+ .v96trade{grid-template-columns:1fr 1fr!important}.v96trade #v914RiskCompare{grid-column:1/-1!important}.v96trade .v96metric{grid-column:1/-1;min-height:64px}
+ .v96actions{display:grid;grid-template-columns:1fr 1fr}.v96actions button{width:100%;padding:8px;font-size:12px}.v96create{min-height:56px;font-size:16px}
+ #chartSection{border-radius:16px}canvas{height:52vh;min-height:380px}
+ .v97performance{gap:7px}.v97performance>div{min-height:76px}.v96stats{grid-template-columns:1fr 1fr!important;gap:7px}.v96stats label{grid-column:1/-1}.v96stats>div{min-height:66px}
+ .iosnav{padding:7px 10px calc(8px + env(safe-area-inset-bottom));background:rgba(10,16,31,.97)}.iosnav button{min-height:56px;border-radius:13px;font-size:12px}.iosnav button b{font-size:21px}.iosnav button.active{background:linear-gradient(180deg,#1c2a4a,#17233e);box-shadow:inset 0 0 0 1px rgba(116,155,229,.12)}
+}
+@media(max-width:380px){.v96prob>div{padding:11px 9px}.v96prob b{font-size:32px}.v96prob #v920LongMetrics,.v96prob #v920ShortMetrics{font-size:12px!important;line-height:18px!important;height:36px}}
+
+/* V9.34 chart touch upgrade */
+#chart{touch-action:none;-webkit-user-select:none;user-select:none;overscroll-behavior:contain}
+@media(max-width:700px){#chartSection{padding:10px 8px}#chart{height:64vh;min-height:470px;max-height:650px}#chartSection>.label{font-weight:800;letter-spacing:.04em}}
+/* V9.36 compact exchange-style mobile chart */
+.chart-head{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:2px 4px 8px;font-size:13px}.chart-head b{font-size:15px}.chart-head>div>span{color:var(--muted)}.chart-legend{display:flex;gap:9px;font-size:10px;color:var(--muted);white-space:nowrap}.chart-legend .ma7dot{color:#6ca6ff}.chart-legend .ma25dot{color:#f7c65f}
+@media(max-width:700px){body.page-trade #mobileTradeAnchor{padding:5px 8px!important;margin-bottom:5px!important}body.page-trade #mobileTradeAnchor .controls{grid-template-columns:minmax(0,1fr) 92px!important;gap:6px!important;margin-bottom:5px!important}body.page-trade #mobileTradeAnchor .controls #symbolSearch{display:none!important}body.page-trade #mobileTradeAnchor .controls select{min-height:36px!important;padding:6px 9px!important;font-size:13px!important}body.page-trade #livePriceCard{display:grid!important;grid-template-columns:1fr auto;grid-template-rows:auto auto;padding:8px 10px!important;border-radius:10px!important;align-items:end}body.page-trade #livePriceCard .label{grid-column:1;font-size:10px!important}body.page-trade #livePriceCard .value{grid-column:1;font-size:24px!important;line-height:1.05;margin-top:2px!important}body.page-trade #livePriceCard .small{grid-column:2;grid-row:1/3;align-self:center;text-align:right;font-size:9px!important;max-width:145px}body.page-trade #chartSection{order:-10;margin:0 0 8px!important;padding:7px 4px 4px!important;border-radius:10px!important;background:#0b1222!important}body.page-trade #chart{display:block;width:100%!important;height:52vh!important;min-height:390px!important;max-height:520px!important;border-radius:4px!important;background:#0b1222!important}.chart-head{padding:2px 5px 6px}.chart-head b{font-size:13px}.chart-legend{gap:6px;font-size:9px}.chart-help{display:none!important}}
+
+/* V9.38 responsive mobile chart: stay inside viewport + allow vertical page scroll */
+html,body{max-width:100%;overflow-x:hidden}
+#chart{max-width:100%;}
+@media(max-width:700px){
+ body.page-trade #chartSection{margin-left:0!important;margin-right:0!important;width:100%!important;max-width:100%!important;padding:6px 4px 4px!important;border-radius:10px!important;overflow:hidden!important}
+ body.page-trade #chartSection .chart-head{padding:4px 5px 8px!important;max-width:100%;overflow:hidden}
+ body.page-trade #chart{display:block;width:100%!important;max-width:100%!important;height:clamp(460px,58vh,520px)!important;min-height:0!important;border-radius:4px!important;touch-action:pan-y!important;overscroll-behavior-x:contain;overscroll-behavior-y:auto}
+}
+
+/* V9.39 desktop text-overlap / responsive layout fix */
+@media(min-width:701px){
+  #v9EdgeSection, #v932PerformanceSection, #holdingsSection, .card{min-width:0;box-sizing:border-box}
+  .v96context{overflow-wrap:anywhere;word-break:break-word}
+  .v96prob{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .v96prob>div{min-width:0;height:auto!important;min-height:170px!important;max-height:none!important;grid-template-rows:auto auto auto auto!important;row-gap:5px;overflow:hidden}
+  .v96prob span,.v96prob small,.v96prob #v920LongMetrics,.v96prob #v920ShortMetrics,.v96prob .evline{min-width:0;max-width:100%;overflow-wrap:anywhere;word-break:normal}
+  .v96prob #v920LongMetrics,.v96prob #v920ShortMetrics{height:auto!important;min-height:40px;white-space:normal!important;overflow:visible!important}
+  .v96prob .evline{height:auto!important;min-height:20px;white-space:normal!important}
+  .v96row,.v96mode,.v96trade,.v96plan,.v96stats,.v97performance{min-width:0}
+  .v96row>* ,.v96mode>* ,.v96trade>* ,.v96plan>* ,.v96stats>* ,.v97performance>*{min-width:0;box-sizing:border-box}
+  .v96card input,.v96card select{min-width:0;max-width:100%}
+  .v96plan b,.v96metric b,.v96stats b,.v97performance b{overflow-wrap:anywhere;word-break:break-word}
+  .v97advice{max-width:100%!important;overflow-wrap:anywhere}
+  .v9table{table-layout:auto;min-width:980px}
+  .v9table th,.v9table td{white-space:normal;overflow-wrap:anywhere;word-break:normal;line-height:1.45}
+}
+@media(min-width:701px) and (max-width:1050px){
+  .v96row{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .v96row>*:last-child{grid-column:1/-1}
+  .v96mode{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .v96trade{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+  .v96plan{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+  .v96stats{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+  .v97performance{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+
+/* V9.43 desktop scroll + candle readability */
+@media (min-width:701px){
+  html,body{overflow-x:hidden!important;overflow-y:auto!important;height:auto!important;min-height:100%!important;overscroll-behavior:auto!important}
+  body{position:static!important}
+  #chart{touch-action:auto!important}
+}
+
+/* V9.43 futuristic UI + actionable trade review */
+:root{--neon:#59d8ff;--neon2:#7c6cff;--good:#38e7a2;--bad:#ff5f78;--panel2:rgba(16,28,53,.86)}
+body{background:radial-gradient(circle at 15% 0%,rgba(40,91,170,.12),transparent 30%),radial-gradient(circle at 90% 18%,rgba(90,61,180,.10),transparent 28%),#070d1b}
+header{background:rgba(7,13,27,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(89,216,255,.16)}
+.card,.panel,.v91panel,.v96panel,.holding-card{background:linear-gradient(145deg,rgba(18,31,57,.94),rgba(10,19,37,.94));border-color:rgba(104,150,224,.26);box-shadow:0 12px 32px rgba(0,0,0,.18),inset 0 1px rgba(255,255,255,.025)}
+button,select,input{transition:border-color .18s,box-shadow .18s,transform .18s}button:hover{border-color:rgba(89,216,255,.55);box-shadow:0 0 0 1px rgba(89,216,255,.08),0 0 18px rgba(89,216,255,.08)}
+.version-badge{color:#91a9d7}.ds-cloud{color:var(--good)}
+#v91LongCard,#v91ShortCard{position:relative;overflow:hidden}#v91LongCard:before,#v91ShortCard:before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(transparent,var(--neon),transparent);opacity:.65}
+.v942-review-backdrop{position:fixed;inset:0;background:rgba(2,7,16,.78);backdrop-filter:blur(7px);z-index:99998;display:flex;align-items:center;justify-content:center;padding:18px}
+.v942-review{width:min(680px,100%);max-height:min(760px,88vh);overflow:auto;background:linear-gradient(155deg,#12213d,#0a1327 68%);border:1px solid rgba(89,216,255,.32);border-radius:22px;box-shadow:0 24px 80px rgba(0,0,0,.55),0 0 32px rgba(62,154,255,.09);padding:20px;color:#eaf2ff}
+.v942-review-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;border-bottom:1px solid rgba(129,166,220,.16);padding-bottom:14px;margin-bottom:14px}.v942-review-title{font-size:21px;font-weight:900}.v942-review-sub{font-size:12px;color:#8ea4c8;margin-top:4px}.v942-close{width:36px;height:36px;border-radius:12px;font-size:18px;padding:0}.v942-result{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:12px 0}.v942-stat{padding:12px;border-radius:14px;background:rgba(5,12,27,.55);border:1px solid rgba(108,148,207,.16)}.v942-stat span{display:block;font-size:11px;color:#8197bb;margin-bottom:5px}.v942-stat b{font-size:17px}.v942-good{color:var(--good)}.v942-bad{color:var(--bad)}.v942-warn{color:#ffc75d}.v942-section{margin-top:13px;padding:14px;border-radius:15px;background:rgba(7,15,31,.56);border:1px solid rgba(109,151,215,.15)}.v942-section h3{font-size:12px;letter-spacing:.08em;color:#8ca6cf;margin:0 0 8px}.v942-verdict{font-size:18px;font-weight:900;line-height:1.4}.v942-list{margin:7px 0 0;padding-left:18px;color:#c7d5ed;line-height:1.65}.v942-action{border-color:rgba(89,216,255,.26);background:linear-gradient(135deg,rgba(20,105,155,.16),rgba(56,40,130,.13))}.v942-action strong{color:#7ce4ff}.v942-tag{display:inline-flex;padding:5px 9px;border-radius:999px;background:rgba(89,216,255,.09);border:1px solid rgba(89,216,255,.18);font-size:11px;color:#a8dcff;margin:3px 5px 3px 0}
+@media(max-width:700px){.v942-review{padding:16px;border-radius:18px}.v942-result{grid-template-columns:repeat(2,1fr)}.v942-review-title{font-size:18px}}
+</style>
+<style id="v943-real-ui-fix">
+/* V9.43 — visible tech UI refresh + truly fixed mobile trade identity */
+:root{--cyan:#59d8ff;--violet:#7c6cff;--techline:rgba(89,216,255,.22)}
+body{background:radial-gradient(900px 420px at 50% -120px,rgba(38,105,190,.22),transparent 62%),linear-gradient(180deg,#07101e 0%,#050a14 100%)!important}
+.card,#v9EdgeSection,.posbox,#chartSection{border-color:var(--techline)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.025),0 12px 30px rgba(0,0,0,.24)!important}
+#v9EdgeSection{position:relative;background:linear-gradient(145deg,rgba(14,31,57,.98),rgba(9,18,36,.98))!important}
+#v9EdgeSection:before{content:'';position:absolute;left:0;top:0;width:100%;height:2px;background:linear-gradient(90deg,transparent,var(--cyan),var(--violet),transparent);opacity:.72}
+.v96prob>div{border-color:rgba(92,143,221,.32)!important;background:linear-gradient(145deg,rgba(20,39,70,.96),rgba(13,25,48,.98))!important}
+.v96prob>div:first-child{box-shadow:inset 0 0 28px rgba(45,220,164,.035)!important}.v96prob>div:last-child{box-shadow:inset 0 0 28px rgba(255,84,111,.035)!important}
+.v96prob b{font-variant-numeric:tabular-nums;text-shadow:0 0 20px rgba(114,170,255,.12)}
+.v96create{background:linear-gradient(100deg,#285bd7,#4e79ef 48%,#6557db)!important;border-color:rgba(125,183,255,.5)!important;box-shadow:0 10px 28px rgba(40,99,220,.28)!important}
+#chartSection{background:linear-gradient(180deg,#081323,#07101d)!important}
+input,select,button{border-color:rgba(102,145,211,.32)!important}
+@media(max-width:700px){
+  /* fixed, not sticky: coin/timeframe/LIVE can never scroll away on Trade page */
+  body.page-trade #mobileTradeAnchor{position:fixed!important;left:0!important;right:0!important;top:64px!important;width:100%!important;max-width:100vw!important;z-index:80!important;margin:0!important;padding:6px 10px 7px!important;box-sizing:border-box!important;background:rgba(6,13,27,.965)!important;border-bottom:1px solid rgba(89,216,255,.24)!important;box-shadow:0 10px 28px rgba(0,0,0,.38)!important;backdrop-filter:blur(18px)!important;-webkit-backdrop-filter:blur(18px)!important}
+  body.page-trade .wrap{padding-top:126px!important}
+  body.page-trade #mobileTradeAnchor .controls{display:grid!important;grid-template-columns:minmax(0,1fr) 96px!important;gap:7px!important;margin:0 0 5px!important}
+  body.page-trade #mobileTradeAnchor .controls #symbolSearch{display:none!important}
+  body.page-trade #mobileTradeAnchor .controls #symbol,body.page-trade #mobileTradeAnchor .controls #bar{height:36px!important;min-height:36px!important;border-radius:10px!important;background:#101c33!important}
+  body.page-trade #mobileTradeAnchor #livePriceCard{min-height:50px!important;padding:6px 10px!important;border-radius:11px!important;background:linear-gradient(100deg,#0d1b33,#0a1529)!important;border:1px solid rgba(89,216,255,.25)!important}
+  body.page-trade #mobileTradeAnchor #livePriceCard .value{font-size:23px!important;color:#f7fbff!important}
+  body.page-trade #mobileTradeAnchor #livePriceCard .small{font-size:9px!important}
+  #v9EdgeSection{border-radius:18px!important}
+  .v96prob>div{border-radius:15px!important}
+  .v96create{border-radius:14px!important}
+}
+</style>
+
+<style id="v944-full-fixed-console">
+/* V9.44 — on mobile Trade page, the entire top console is one fixed unit. */
+@media(max-width:700px){
+  body.page-trade{--v944-header-h:92px;--v944-anchor-h:118px;}
+  body.page-trade>header{
+    position:fixed!important;left:0!important;right:0!important;top:0!important;z-index:91!important;
+    min-height:var(--v944-header-h)!important;height:var(--v944-header-h)!important;
+    padding:calc(8px + env(safe-area-inset-top)) 12px 7px!important;box-sizing:border-box!important;
+    display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;grid-template-rows:auto auto!important;
+    align-items:center!important;gap:2px 8px!important;background:rgba(6,13,27,.985)!important;
+    border-bottom:0!important;box-shadow:none!important;overflow:hidden!important;
+    backdrop-filter:blur(18px)!important;-webkit-backdrop-filter:blur(18px)!important;
+  }
+  body.page-trade>header>div:first-child{min-width:0!important;align-self:center!important;}
+  body.page-trade>header h1{font-size:17px!important;line-height:1.1!important;margin:0!important;white-space:nowrap!important;}
+  body.page-trade>header .tag{display:none!important;}
+  body.page-trade>header>div:nth-child(2){display:none!important;}
+  body.page-trade>header .ds-authbar{width:auto!important;margin:0!important;justify-content:flex-end!important;flex-wrap:nowrap!important;gap:5px!important;min-width:0!important;}
+  body.page-trade>header .ds-cloud{font-size:10px!important;white-space:nowrap!important;}
+  body.page-trade>header .ds-user{font-size:10px!important;max-width:112px!important;}
+  body.page-trade>header .ds-authbar button{padding:6px 8px!important;font-size:11px!important;min-height:32px!important;white-space:nowrap!important;}
+  body.page-trade #mobileTradeAnchor{
+    position:fixed!important;left:0!important;right:0!important;top:var(--v944-header-h)!important;z-index:90!important;
+    min-height:var(--v944-anchor-h)!important;height:var(--v944-anchor-h)!important;width:100%!important;max-width:100vw!important;
+    margin:0!important;padding:7px 10px 8px!important;box-sizing:border-box!important;background:rgba(6,13,27,.985)!important;
+    border-top:1px solid rgba(89,216,255,.10)!important;border-bottom:1px solid rgba(89,216,255,.28)!important;
+    box-shadow:0 12px 30px rgba(0,0,0,.36)!important;overflow:hidden!important;
+  }
+  body.page-trade .wrap{padding-top:calc(var(--v944-header-h) + var(--v944-anchor-h) + 8px)!important;}
+}
+</style>
+
+<style id="v945-global-console">
+/* V9.45 — one identical mobile Global Top Console on Market / Trade / Holding. */
+@media(max-width:700px){
+ body.mobile-v46{--v945-header-h:78px;--v945-console-h:118px;}
+ body.mobile-v46>header{position:fixed!important;left:0!important;right:0!important;top:0!important;z-index:191!important;height:var(--v945-header-h)!important;min-height:var(--v945-header-h)!important;padding:calc(7px + env(safe-area-inset-top)) 12px 6px!important;box-sizing:border-box!important;display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;align-items:center!important;gap:6px!important;background:rgba(6,13,27,.985)!important;border-bottom:0!important;overflow:hidden!important;backdrop-filter:blur(18px)!important;-webkit-backdrop-filter:blur(18px)!important}
+ body.mobile-v46>header>div:first-child{min-width:0!important} body.mobile-v46>header h1{font-size:17px!important;line-height:1.1!important;margin:0!important;white-space:nowrap!important} body.mobile-v46>header .tag{display:none!important} body.mobile-v46>header>div:nth-child(2){display:none!important}
+ body.mobile-v46>header .ds-authbar{width:auto!important;margin:0!important;justify-content:flex-end!important;flex-wrap:nowrap!important;gap:4px!important;min-width:0!important} body.mobile-v46>header .ds-cloud{font-size:10px!important;white-space:nowrap!important} body.mobile-v46>header .ds-user{font-size:10px!important;max-width:105px!important} body.mobile-v46>header .ds-authbar button{padding:6px 8px!important;font-size:11px!important;min-height:32px!important;white-space:nowrap!important}
+ body.mobile-v46 #mobileTradeAnchor{position:fixed!important;left:0!important;right:0!important;top:var(--v945-header-h)!important;z-index:190!important;width:100%!important;max-width:100vw!important;height:var(--v945-console-h)!important;min-height:var(--v945-console-h)!important;margin:0!important;padding:7px 10px 8px!important;box-sizing:border-box!important;background:rgba(6,13,27,.985)!important;border-top:1px solid rgba(89,216,255,.10)!important;border-bottom:1px solid rgba(89,216,255,.28)!important;box-shadow:0 12px 30px rgba(0,0,0,.30)!important;overflow:hidden!important}
+ body.mobile-v46 #mobileTradeAnchor .controls{display:grid!important;grid-template-columns:minmax(0,1fr) 96px!important;gap:7px!important;margin:0 0 5px!important} body.mobile-v46 #mobileTradeAnchor .controls #symbolSearch{display:none!important} body.mobile-v46 #mobileTradeAnchor .controls #symbol,body.mobile-v46 #mobileTradeAnchor .controls #bar{height:36px!important;min-height:36px!important;border-radius:10px!important;background:#101c33!important}
+ body.mobile-v46 #mobileTradeAnchor #livePriceCard{display:grid!important;grid-template-columns:1fr auto!important;grid-template-rows:auto auto!important;min-height:50px!important;padding:6px 10px!important;margin:0!important;border-radius:11px!important;background:linear-gradient(100deg,#0d1b33,#0a1529)!important;border:1px solid rgba(89,216,255,.25)!important;box-shadow:none!important} body.mobile-v46 #mobileTradeAnchor #livePriceCard .label{grid-column:1;font-size:10px!important} body.mobile-v46 #mobileTradeAnchor #livePriceCard .value{grid-column:1;font-size:23px!important;line-height:1.05;margin-top:2px!important;color:#f7fbff!important} body.mobile-v46 #mobileTradeAnchor #livePriceCard .small{grid-column:2;grid-row:1/3;align-self:center;text-align:right;font-size:9px!important;max-width:145px}
+ body.mobile-v46 .wrap{padding-top:calc(var(--v945-header-h) + var(--v945-console-h) + 8px)!important}
+ body.mobile-v46 #mobileMarketSearch{display:none} body.mobile-v46.page-market #mobileMarketSearch{display:block!important;margin:0 0 10px!important;width:100%!important;box-sizing:border-box!important;height:44px!important;border-radius:12px!important;padding:0 14px!important;background:#101c33!important;color:#eef5ff!important;border:1px solid rgba(102,145,211,.38)!important;font-size:14px!important}
+}
+</style>
+<style id="v946-sinka-ui">
+/* V9.46 — SINKA silver/gold terminal skin + page-specific mobile header behavior */
+:root{--bg:#070b13;--panel:#0e1522;--panel2:#121c2c;--text:#f3f5f8;--muted:#9ca8ba;--line:#2a3445;--good:#58d7a0;--bad:#ff6e7c;--warn:#d7ad55;--blue:#bfc8d6;--gold:#d7ad55;--silver:#d8dee8}
+body{background:radial-gradient(circle at 18% 0%,rgba(215,173,85,.055),transparent 28%),linear-gradient(180deg,#070b13 0%,#090f1a 58%,#070b13 100%)!important;color:var(--text)}
+header,.card,.posbox,.triggerbox,#mobileTradeAnchor{border-color:rgba(196,205,220,.16)!important}
+.card,.posbox,.triggerbox{background:linear-gradient(145deg,rgba(18,28,44,.96),rgba(10,16,27,.97))!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.025),0 12px 28px rgba(0,0,0,.16)}
+button,select,input{border-color:rgba(197,207,224,.20)!important;background:#101927!important}button:hover{border-color:rgba(215,173,85,.55)!important}
+.brand-lockup{display:flex;align-items:center;gap:9px;min-width:0}.brand-logo{width:40px;height:40px;object-fit:contain;filter:drop-shadow(0 0 8px rgba(215,173,85,.22));flex:0 0 auto}.brand-copy{display:flex;flex-direction:column;align-items:flex-start;min-width:0}.brand-copy h1{color:#f4f5f7;line-height:1!important;letter-spacing:.055em!important}.brand-copy .version-badge{display:block;margin:4px 0 0!important;color:#d7ad55!important;font-size:10px!important;font-weight:800;line-height:1!important;letter-spacing:.09em}
+.ds-authbar{border-left:1px solid rgba(215,173,85,.18);padding-left:10px}.ds-cloud{display:none!important}.ds-user{color:#c5ccd8!important}.ds-authbar button{border-color:rgba(215,173,85,.34)!important;color:#f0e3c1!important}
+#livePriceCard{border-color:rgba(215,173,85,.28)!important;background:linear-gradient(105deg,#111a29,#0b121e)!important}.chart-shell,.chart-head{border-color:rgba(215,173,85,.18)!important}
+.good,.ok{color:#58d7a0!important}.neutral,.no{color:#d7ad55!important}
+@media(max-width:700px){
+ body.mobile-v46{--v946-header-h:82px;--v946-console-h:118px}
+ body.mobile-v46>header{height:var(--v946-header-h)!important;min-height:var(--v946-header-h)!important;padding:calc(8px + env(safe-area-inset-top)) 12px 7px!important;background:rgba(7,11,19,.985)!important;border-bottom:1px solid rgba(215,173,85,.16)!important;box-shadow:0 10px 26px rgba(0,0,0,.24)!important;grid-template-columns:minmax(0,1fr) auto!important}
+ body.mobile-v46>header .brand-logo{width:34px;height:34px}.brand-copy h1{font-size:16px!important;white-space:nowrap!important}.brand-copy .version-badge{font-size:9px!important;margin-top:4px!important}
+ body.mobile-v46>header .ds-authbar{gap:5px!important;max-width:48vw!important}.ds-user{max-width:108px!important;font-size:9px!important}.ds-authbar button{font-size:10px!important;padding:6px 8px!important}
+ /* Market: title/account fixed; no BTC/timeframe/live console. Only search is page content. */
+ body.mobile-v46.page-market #mobileTradeAnchor{display:none!important}
+ body.mobile-v46.page-market .wrap{padding-top:calc(var(--v946-header-h) + 10px)!important}
+ body.mobile-v46.page-market #mobileMarketSearch{display:block!important;position:static!important;height:46px!important;margin:0 0 12px!important;border:1px solid rgba(215,173,85,.25)!important;background:linear-gradient(135deg,#111b2b,#0d1522)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.025)!important}
+ /* Trade: keep the compact symbol / timeframe / LIVE console pinned. */
+ body.mobile-v46.page-trade #mobileTradeAnchor{display:block!important;position:fixed!important;top:var(--v946-header-h)!important;height:var(--v946-console-h)!important;min-height:var(--v946-console-h)!important;background:rgba(7,11,19,.985)!important;border-top:0!important;border-bottom:1px solid rgba(215,173,85,.24)!important}
+ body.mobile-v46.page-trade .wrap{padding-top:calc(var(--v946-header-h) + var(--v946-console-h) + 8px)!important}
+ body.mobile-v46.page-trade #mobileTradeAnchor .controls #symbol,body.mobile-v46.page-trade #mobileTradeAnchor .controls #bar{background:#101927!important;border-color:rgba(196,205,220,.22)!important}
+ body.mobile-v46.page-trade #mobileTradeAnchor #livePriceCard{border-color:rgba(215,173,85,.26)!important;background:linear-gradient(105deg,#111a29,#0b121e)!important}
+ /* Holding: only brand/account top bar; no instrument console. */
+ body.mobile-v46.page-holding #mobileTradeAnchor{display:none!important}
+ body.mobile-v46.page-holding .wrap{padding-top:calc(var(--v946-header-h) + 10px)!important}
+ .iosnav{background:rgba(7,11,19,.97)!important;border-top-color:rgba(215,173,85,.18)!important}.iosnav button.active{background:linear-gradient(180deg,rgba(215,173,85,.12),rgba(215,173,85,.04))!important;border:1px solid rgba(215,173,85,.24)!important;color:#f4e8c9!important}.iosnav button.active b{color:#d7ad55!important}
+}
+</style></head><body><header><div><div class="brand-lockup"><img class="brand-logo" src="icon-192.png" alt=""><div class="brand-copy"><h1>DATA SNIPER</h1><span class="version-badge">V9.46</span></div></div><div class="tag">高確認模式｜市場 Regime → 趨勢 → 位置 → Retest → Trigger → Risk Gate</div></div><div style="margin-left:auto;text-align:right"><div id="status" class="status">準備中</div><div id="analysisClock" class="status" style="font-size:11px;margin-top:3px">最後分析：—｜下一次K棒確認：—</div></div><div class="ds-authbar"><span id="dsCloud" class="ds-cloud">☁ 尚未登入</span><span id="dsUser" class="ds-user"></span><button id="dsLoginBtn" type="button">登入 / 註冊</button><button id="dsLogoutBtn" type="button" style="display:none">登出</button></div></header>
 <div class="wrap"><div class="controls" id="tradeControls"><input id="symbolSearch" placeholder="搜尋幣種，例如 TRUMP / BTC" style="width:220px" autocomplete="off">
 <div id="symbolSuggestions" hidden></div><select id="symbol" aria-label="交易幣種" title="交易幣種"><option>BTC-USDT-SWAP</option></select><select id="bar" aria-label="K線週期"><option value="5m" selected>5分鐘</option><option value="15m">15分鐘</option><option value="1H">1小時</option></select><button id="refresh">重新整理</button><button id="scan">掃描市場</button></div>
 <div id="tradeSticky" style="display:none"><span id="stickySymbol"></span><span id="stickyPrice"></span></div>
+<input id="mobileMarketSearch" placeholder="搜尋幣種，例如 TRUMP / BTC" autocomplete="off">
 <div id="top3Section" class="card" style="margin-bottom:14px">
 <div class="label">交易候選 TOP 3｜自動掃描目前較值得等待高確認訊號的 USDT 永續</div>
 <div class="small" id="top3Info" style="margin-top:6px">掃描中…｜候選 ≠ 立即進場，仍需交易頁出現 🟢 ENTRY</div>
@@ -263,8 +477,8 @@ body .mobile-page.mobile-active[data-display-target].display-off{display:none!im
   <div id="v96Context" class="v96context">同步目前幣種 / 週期中…</div>
 
   <div class="v96prob">
-    <div><span>LONG 現在進場估計勝率</span><b id="v91LongEst">—</b><div id="v920LongMetrics" style="margin-top:6px;font-size:14px;font-weight:700;color:#b9c8e8">R:R —｜EV —</div><small id="v91LongMeta">依目前市場資料估計｜待交易紀錄校準</small></div>
-    <div><span>SHORT 現在進場估計勝率</span><b id="v91ShortEst">—</b><div id="v920ShortMetrics" style="margin-top:6px;font-size:14px;font-weight:700;color:#b9c8e8">R:R —｜EV —</div><small id="v91ShortMeta">依目前市場資料估計｜待交易紀錄校準</small></div>
+    <div><span>LONG 現在進場估計勝率</span><b id="v91LongEst">—</b><div id="v920LongMetrics" style="margin-top:6px;font-size:14px;font-weight:700;color:#b9c8e8">R:R —<br><span class="evline">EV —</span></div><small id="v91LongMeta">依目前市場資料估計｜待交易紀錄校準</small></div>
+    <div><span>SHORT 現在進場估計勝率</span><b id="v91ShortEst">—</b><div id="v920ShortMetrics" style="margin-top:6px;font-size:14px;font-weight:700;color:#b9c8e8">R:R —<br><span class="evline">EV —</span></div><small id="v91ShortMeta">依目前市場資料估計｜待交易紀錄校準</small></div>
   </div>
 
   <div class="v96row">
@@ -344,7 +558,7 @@ body .mobile-page.mobile-active[data-display-target].display-off{display:none!im
   <div class="small" style="margin-top:8px">交易頁會同步目前分析幣種與所選主週期的已收盤 K 棒進場判定。V9.0 不再把方向分數當成進場。只有通過高週期、趨勢、禁止追價、突破回踩、完成K與量能等硬條件後，才顯示 ENTRY。</div>
 </div>
 <div class="label">進場計畫 / 手動持倉追蹤</div><div class="posbox"><div id="positionState" class="triggerTitle neutral">尚未建立持倉</div><div id="positionSymbol" class="possymbol">尚未鎖定幣種</div><div class="formgrid"><label class="small">風控模式<select id="riskMode"><option value="fixed">固定倉位模式</option><option value="pro">專業風控模式</option></select></label><label class="small">方向<select id="posSide"><option value="long">LONG 做多</option><option value="short">SHORT 做空</option></select></label><label class="small">預計 / 實際成交價<input id="posEntry" type="number" step="any" placeholder="可用目前價"></label><label class="small" id="marginLabel">本次投入保證金 USDT<input id="accountEquity" type="number" step="any" value="100"></label><label class="small">最大願意虧損 USDT（1R）<input id="maxLoss" type="number" step="any" value="5"></label><label class="small">槓桿<input id="leverage" type="number" min="1" max="125" value="20"></label><label class="small" id="manualTechWrap" style="display:none">技術 SL（可手動覆寫）<input id="manualTechSL" type="number" step="any" placeholder="留空＝採系統技術SL"></label><label class="small" id="actualMarginWrap" style="display:none">實際投入保證金 USDT<input id="actualMargin" type="number" step="any" placeholder="計畫後自動帶入，可自行修改"></label></div><div id="modeHelp" class="small" style="margin-top:8px">固定倉位：投入保證金 × 槓桿決定名義倉位，再反推 -1R 資金SL。</div><div class="actions"><button id="useLive">帶入目前價</button><button id="calcPlan">先計算進場計畫</button><button id="enterPosition">我已進場・開始追蹤</button><button id="closePosition">結束持倉</button></div><div id="preTradePlan" class="metricgrid" style="margin-top:10px"></div><div id="preTradeAlert"></div><div id="positionMetrics" class="metricgrid"></div><div id="riskAlert"></div><div class="small" style="margin-top:8px">先看「進場計畫」再下單。固定投入模式：你指定投入保證金＋槓桿＋1R，系統反推資金SL。專業風控模式：技術SL＋1R反推最大名義倉位；槓桿只顯示最低初始保證金需求與安全檢查。建立持倉後幣種鎖定；即時U盈虧、ROE皆未扣手續費、滑價與資金費。</div></div></div>
-<div id="chartSection" class="card full"><div class="label">K 線圖</div><canvas id="chart" width="1200" height="520"></canvas><div class="small" style="margin-top:8px">綠K＝收漲、紅K＝收跌；藍線 MA7、黃線 MA25。滑鼠滾輪＝放大/縮小；按住拖曳＝左右移動；移到 K 棒上可看 OHLC/成交量。雙擊圖表回到最新 K 棒。</div></div>
+<div id="chartSection" class="card full"><div class="chart-head"><div><b id="chartHeadSymbol">K 線</b><span id="chartHeadBar"> · 5m · OKX</span></div><div class="chart-legend"><span class="ma7dot">MA7</span><span class="ma25dot">MA25</span><span>VOL MA20</span></div></div><canvas id="chart" width="1200" height="520"></canvas><div class="small chart-help" style="margin-top:8px">單指左右拖曳 · 雙指縮放 · 雙擊回到最新 K 棒</div></div>
 <div id="v932PerformanceSection" class="card full">
 <div class="label">交易績效｜模擬／真實交易紀錄</div>
 <div class="small" style="margin:6px 0 10px">建立交易後的已實現／未實現損益、勝率驗證與交易紀錄統一在持倉頁管理。</div>
@@ -394,16 +608,19 @@ async function get(path){
 function sma(a,n){return a.map((_,i)=>i<n-1?null:a.slice(i-n+1,i+1).reduce((x,y)=>x+y,0)/n)}
 function rsi(a,n=14){if(a.length<n+1)return null;let g=0,l=0;for(let i=a.length-n;i<a.length;i++){let d=a[i]-a[i-1];if(d>0)g+=d;else l-=d}if(l===0)return 100;let rs=(g/n)/(l/n);return 100-100/(1+rs)}
 function analyze(closes,vols,rv){let m7=sma(closes,7).at(-1),m25=sma(closes,25).at(-1),p=closes.at(-1),score=0,re=[];if(p>m7&&m7>m25){score+=2;re.push('價格 > MA7 > MA25：短中期結構偏多')}else if(p<m7&&m7<m25){score-=2;re.push('價格 < MA7 < MA25：短中期結構偏空')}else re.push('均線排列未形成明確單邊結構');if(rv>=55&&rv<70){score++;re.push('RSI 位於偏強區但未過熱')}else if(rv<=45&&rv>30){score--;re.push('RSI 位於偏弱區')}else if(rv>=70){score--;re.push('RSI ≥ 70：短線過熱風險')}else if(rv<=30){score++;re.push('RSI ≤ 30：超賣反彈風險提高')};let av=vols.slice(-21,-1).reduce((a,b)=>a+b,0)/20;if(vols.at(-1)>av*1.5){re.push('最新成交量明顯高於近期平均');score+=p>closes.at(-2)?1:-1}return {score,re,m7,m25}}
-let chartView={count:70,shift:0,mouseX:null,mouseY:null,drag:false,lastX:0};
+let chartView={count:(matchMedia('(max-width:700px)').matches?44:70),shift:0,mouseX:null,mouseY:null,drag:false,lastX:0};
 function drawChart(ks,m7,m25,levels={}){
+ const hs=$('chartHeadSymbol'),hb=$('chartHeadBar');if(hs)hs.textContent=(activeSym||'').replace('-USDT-SWAP','')+' / USDT';if(hb)hb.textContent=' · '+($('bar')?.value||'5m')+' · OKX';
  const c=$('chart'),ctx=c.getContext('2d'),W=c.width,H=c.height;ctx.clearRect(0,0,W,H);ctx.fillStyle='#0e1528';ctx.fillRect(0,0,W,H);if(!Array.isArray(ks)||ks.length<5)return;
  let count=Math.max(20,Math.min(120,chartView.count,ks.length)), endIdx=Math.max(count,ks.length-chartView.shift), startIdx=Math.max(0,endIdx-count);endIdx=Math.min(ks.length,endIdx);startIdx=Math.max(0,endIdx-count);const rows=ks.slice(startIdx,endIdx),off=startIdx;
- const highs=rows.map(k=>+k[2]).filter(Number.isFinite),lows=rows.map(k=>+k[3]).filter(Number.isFinite);if(!highs.length||!lows.length)return;const left=64,right=235,top=24,priceBottom=390,volTop=410,volBottom=490;let mn=Math.min(...lows),mx=Math.max(...highs);
+ const highs=rows.map(k=>+k[2]).filter(Number.isFinite),lows=rows.map(k=>+k[3]).filter(Number.isFinite);if(!highs.length||!lows.length)return;const mobile=matchMedia('(max-width:700px)').matches;const left=mobile?18:64,right=mobile?150:235,top=24,priceBottom=mobile?405:390,volTop=mobile?420:410,volBottom=mobile?510:490;let mn=Math.min(...lows),mx=Math.max(...highs);
  // 把重要交易線也納入可視價格範圍，避免 SL/強平線落在圖外。
  [levels.support,levels.resistance,levels.entry,levels.riskSL||levels.stop,levels.techSL,levels.liqWarn,levels.tp1,levels.tp2,liveLast].forEach(v=>{v=+v;if(Number.isFinite(v)&&v>0){mn=Math.min(mn,v);mx=Math.max(mx,v)}});
  let range=mx-mn||Math.max(mx*.001,1e-12);mn-=range*.08;mx+=range*.08;const px=i=>left+i*(W-left-right)/Math.max(1,rows.length-1),py=v=>priceBottom-(v-mn)*(priceBottom-top)/(mx-mn);ctx.font='12px system-ui';ctx.textBaseline='middle';
  for(let i=0;i<=5;i++){let y=top+i*(priceBottom-top)/5,v=mx-i*(mx-mn)/5;ctx.strokeStyle='#24314d';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(left,y);ctx.lineTo(W-right,y);ctx.stroke();ctx.fillStyle='#91a0bd';ctx.textAlign='right';ctx.fillText(pf(v),left-8,y)}
- const maxVol=Math.max(...rows.map(k=>+k[5]||0),1),step=(W-left-right)/rows.length,body=Math.max(2,Math.min(14,step*.65));rows.forEach((k,i)=>{let o=+k[1],h=+k[2],l=+k[3],cl=+k[4],v=+k[5];if(![o,h,l,cl].every(Number.isFinite))return;let x=px(i),col=cl>=o?'#3ddc97':'#ff6b7a';ctx.strokeStyle=col;ctx.fillStyle=col;ctx.beginPath();ctx.moveTo(x,py(h));ctx.lineTo(x,py(l));ctx.stroke();let y1=py(Math.max(o,cl)),y2=py(Math.min(o,cl));ctx.fillRect(x-body/2,y1,body,Math.max(1,y2-y1));let vh=(v/maxVol)*(volBottom-volTop);ctx.globalAlpha=.45;ctx.fillRect(x-body/2,volBottom-vh,body,vh);ctx.globalAlpha=1});
+ const maxVol=Math.max(...rows.map(k=>+k[5]||0),1),step=(W-left-right)/rows.length,body=Math.max(3,Math.min(20,step*.78));rows.forEach((k,i)=>{let o=+k[1],h=+k[2],l=+k[3],cl=+k[4],v=+k[5];if(![o,h,l,cl].every(Number.isFinite))return;let x=px(i),col=cl>=o?'#3ddc97':'#ff6b7a';ctx.strokeStyle=col;ctx.fillStyle=col;ctx.lineWidth=1.35;ctx.beginPath();ctx.moveTo(x,py(h));ctx.lineTo(x,py(l));ctx.stroke();let y1=py(Math.max(o,cl)),y2=py(Math.min(o,cl));ctx.fillRect(x-body/2,y1,body,Math.max(1,y2-y1));let vh=(v/maxVol)*(volBottom-volTop);ctx.globalAlpha=.58;ctx.fillRect(x-body/2,volBottom-vh,body,vh);ctx.globalAlpha=1});
+ // VOL MA20：與 K 棒同軸，縮放/拖曳時同步移動。
+ const allVol=ks.map(k=>+k[5]||0), volMA=sma(allVol,20);ctx.save();ctx.strokeStyle='#91a0bd';ctx.lineWidth=1.4;ctx.setLineDash([5,4]);ctx.beginPath();let vb=false;rows.forEach((k,i)=>{const vv=volMA[off+i];if(!Number.isFinite(vv))return;const x=px(i),y=volBottom-(vv/maxVol)*(volBottom-volTop);if(!vb){ctx.moveTo(x,y);vb=true}else ctx.lineTo(x,y)});if(vb)ctx.stroke();ctx.restore();
  function maLine(arr,color){ctx.beginPath();ctx.strokeStyle=color;ctx.lineWidth=2;let begun=false;rows.forEach((k,i)=>{let v=arr[off+i];if(!Number.isFinite(v))return;let x=px(i),y=py(v);if(!begun){ctx.moveTo(x,y);begun=true}else ctx.lineTo(x,y)});ctx.stroke()}maLine(m7,'#6ca6ff');maLine(m25,'#f7c65f');
  // 先畫真實價格水平線，再把文字標籤做獨立避讓；線的位置永遠不因標籤而改變。
  let specs=[
@@ -826,7 +1043,20 @@ $('symbolSuggestions').addEventListener('click',e=>{
 document.addEventListener('click',e=>{
   if(!e.target.closest('#tradeControls')){const b=$('symbolSuggestions');b.hidden=true;b.classList.remove('mobile-open');}
 });
-const chartEl=$('chart');chartEl.addEventListener('wheel',e=>{e.preventDefault();chartView.count=Math.max(20,Math.min(120,chartView.count+(e.deltaY>0?8:-8)));drawChart(currentKs,currentM7,currentM25,currentLevels)},{passive:false});chartEl.addEventListener('mousedown',e=>{chartView.drag=true;chartView.lastX=e.offsetX});window.addEventListener('mouseup',()=>chartView.drag=false);chartEl.addEventListener('mousemove',e=>{chartView.mouseX=e.offsetX;chartView.mouseY=e.offsetY;if(chartView.drag){let dx=e.offsetX-chartView.lastX;if(Math.abs(dx)>10){chartView.shift=Math.max(0,Math.min(Math.max(0,currentKs.length-20),chartView.shift+(dx>0?2:-2)));chartView.lastX=e.offsetX}}drawChart(currentKs,currentM7,currentM25,currentLevels)});chartEl.addEventListener('mouseleave',()=>{chartView.mouseX=null;chartView.mouseY=null;drawChart(currentKs,currentM7,currentM25,currentLevels)});chartEl.addEventListener('dblclick',()=>{chartView.shift=0;chartView.count=70;drawChart(currentKs,currentM7,currentM25,currentLevels)});
+const chartEl=$('chart');
+function chartPoint(e){const r=chartEl.getBoundingClientRect();return {x:(e.clientX-r.left)*(chartEl.width/r.width),y:(e.clientY-r.top)*(chartEl.height/r.height)}}
+// V9.43: desktop wheel is never intercepted by the chart; page scrolling always wins.
+// Chart zoom remains available through mobile pinch; desktop users can drag the chart horizontally.
+chartEl.addEventListener('mousedown',e=>{chartView.drag=true;chartView.lastX=e.clientX});
+window.addEventListener('mouseup',()=>chartView.drag=false);
+chartEl.addEventListener('mousemove',e=>{const p=chartPoint(e);chartView.mouseX=p.x;chartView.mouseY=p.y;if(chartView.drag){let dx=e.clientX-chartView.lastX;if(Math.abs(dx)>8){const jump=Math.max(1,Math.round(chartView.count/35));chartView.shift=Math.max(0,Math.min(Math.max(0,currentKs.length-20),chartView.shift+(dx>0?jump:-jump)));chartView.lastX=e.clientX}}drawChart(currentKs,currentM7,currentM25,currentLevels)});
+chartEl.addEventListener('mouseleave',()=>{chartView.mouseX=null;chartView.mouseY=null;drawChart(currentKs,currentM7,currentM25,currentLevels)});
+let touchState={mode:null,startX:0,startY:0,lastX:0,lastDist:0,startCount:44};
+function touchDist(t){const dx=t[0].clientX-t[1].clientX,dy=t[0].clientY-t[1].clientY;return Math.hypot(dx,dy)}
+chartEl.addEventListener('touchstart',e=>{if(e.touches.length===1){const t=e.touches[0];touchState.mode='pending';touchState.startX=touchState.lastX=t.clientX;touchState.startY=t.clientY}else if(e.touches.length>=2){touchState.mode='pinch';touchState.lastDist=touchDist(e.touches);touchState.startCount=chartView.count}},{passive:true});
+chartEl.addEventListener('touchmove',e=>{if(e.touches.length===1){const t=e.touches[0],dx=t.clientX-touchState.startX,dy=t.clientY-touchState.startY;if(touchState.mode==='pending'&&(Math.abs(dx)>8||Math.abs(dy)>8)){touchState.mode=Math.abs(dx)>Math.abs(dy)*1.15?'pan':'scroll'}if(touchState.mode==='pan'){e.preventDefault();const step=t.clientX-touchState.lastX;if(Math.abs(step)>7){const jump=Math.max(1,Math.round(chartView.count/34));chartView.shift=Math.max(0,Math.min(Math.max(0,currentKs.length-20),chartView.shift+(step>0?jump:-jump)));touchState.lastX=t.clientX;drawChart(currentKs,currentM7,currentM25,currentLevels)}}}else if(e.touches.length>=2){e.preventDefault();if(touchState.mode!=='pinch'){touchState.mode='pinch';touchState.lastDist=touchDist(e.touches);touchState.startCount=chartView.count}const d=touchDist(e.touches),ratio=d/Math.max(1,touchState.lastDist);chartView.count=Math.max(20,Math.min(120,Math.round(touchState.startCount/ratio)));drawChart(currentKs,currentM7,currentM25,currentLevels)}},{passive:false});
+chartEl.addEventListener('touchend',e=>{if(e.touches.length===0)touchState.mode=null;else if(e.touches.length===1){const t=e.touches[0];touchState.mode='pending';touchState.startX=touchState.lastX=t.clientX;touchState.startY=t.clientY}},{passive:true});
+chartEl.addEventListener('dblclick',()=>{chartView.shift=0;chartView.count=matchMedia('(max-width:700px)').matches?44:70;drawChart(currentKs,currentM7,currentM25,currentLevels)});
 $('refresh').onclick=()=>load();$('scan').onclick=scan;$('symbol').onchange=()=>{if(typeof V91update==='function')V91update();load().finally(()=>{if(typeof V91update==='function')V91update()})};$('bar').onchange=()=>{__lastBoundaryKey='';if(typeof V91update==='function')V91update();load().finally(()=>{if(typeof V91update==='function')V91update()});setTimeout(updateAnalysisClock,50)};
 let backgroundRefreshBusy=false;
 async function backgroundRefresh(){
@@ -845,13 +1075,14 @@ function syncMobileTradeAnchor(){
  const wrap=document.querySelector('.wrap'), controls=document.getElementById('tradeControls'), live=document.getElementById('livePriceCard');
  if(!wrap||!controls||!live)return;
  let anchor=document.getElementById('mobileTradeAnchor');
- if(window.innerWidth<=700 && document.body.classList.contains('page-trade')){
+ if(window.innerWidth<=700){
    if(!anchor){anchor=document.createElement('div');anchor.id='mobileTradeAnchor';wrap.insertBefore(anchor,wrap.firstChild);}
    if(controls.parentNode!==anchor)anchor.appendChild(controls);
    if(live.parentNode!==anchor)anchor.appendChild(live);
+   const chart=document.getElementById('chartSection');if(chart&&chart.previousElementSibling!==anchor)anchor.insertAdjacentElement('afterend',chart);
  } else {
    const grid=document.querySelector('.grid');
-   if(anchor){if(controls.parentNode===anchor)wrap.insertBefore(controls,anchor.nextSibling);if(live.parentNode===anchor&&grid)grid.insertBefore(live,grid.firstChild);anchor.remove();}
+   if(anchor){if(controls.parentNode===anchor)wrap.insertBefore(controls,anchor.nextSibling);if(live.parentNode===anchor&&grid)grid.insertBefore(live,grid.firstChild);const chart=document.getElementById('chartSection');if(chart&&grid&&chart.parentNode!==grid)grid.appendChild(chart);anchor.remove();}
  }
 }
 window.addEventListener('resize',syncMobileTradeAnchor);
@@ -931,9 +1162,15 @@ function setupMobilePages(){
  // V5.9：手機與電腦共用同一套顯示設定，不再由 responsive CSS 自動隱藏分析卡片。
  // 交易區上方舊版重複摘要不再顯示，避免同一訊號出現兩次。
  if($('tradeContext')) $('tradeContext').classList.add('v46-hide');
- function show(page){if(!matchMedia('(max-width:700px)').matches){document.querySelectorAll('.mobile-page').forEach(x=>x.classList.remove('mobile-active'));return}document.body.classList.toggle('holding-mode',page==='holding');document.body.classList.toggle('page-trade',page==='trade');document.body.classList.toggle('page-market',page==='market');document.body.classList.toggle('page-holding',page==='holding');document.querySelectorAll('.mobile-page').forEach(x=>x.classList.toggle('mobile-active',x.dataset.mobilePage===page));document.querySelectorAll('.iosnav button').forEach(b=>b.classList.toggle('active',b.dataset.page===page));localStorage.setItem('dh_mobile_page',page);window.scrollTo({top:0,behavior:'instant'});if(page==='trade')setTimeout(()=>{syncTradeContext();drawChart()},60);if(page==='holding')renderHoldingCards()}
+ function show(page){if(!matchMedia('(max-width:700px)').matches){document.querySelectorAll('.mobile-page').forEach(x=>x.classList.remove('mobile-active'));return}document.body.classList.toggle('holding-mode',page==='holding');document.body.classList.toggle('page-trade',page==='trade');document.body.classList.toggle('page-market',page==='market');document.body.classList.toggle('page-holding',page==='holding');document.querySelectorAll('.mobile-page').forEach(x=>x.classList.toggle('mobile-active',x.dataset.mobilePage===page));document.querySelectorAll('.iosnav button').forEach(b=>b.classList.toggle('active',b.dataset.page===page));localStorage.setItem('dh_mobile_page',page);window.scrollTo({top:0,behavior:'instant'});syncMobileTradeAnchor();if(page==='trade')setTimeout(()=>{syncTradeContext();drawChart()},60);if(page==='holding')renderHoldingCards()}
  window.dhShowPage=show;document.querySelectorAll('.iosnav button').forEach(b=>b.addEventListener('click',()=>show(b.dataset.page)));show(localStorage.getItem('dh_mobile_page')||'market');
 }
+
+(function setupMobileMarketSearch(){
+ const proxy=document.getElementById('mobileMarketSearch'), real=document.getElementById('symbolSearch'), sel=document.getElementById('symbol'); if(!proxy||!real||!sel)return;
+ proxy.addEventListener('input',()=>{real.value=proxy.value;real.dispatchEvent(new Event('input',{bubbles:true}))});
+ proxy.addEventListener('keydown',e=>{if(e.key!=='Enter')return;const q=proxy.value.trim().toUpperCase();if(!q)return;const opt=[...sel.options].find(o=>o.value.toUpperCase()===q||o.value.toUpperCase().startsWith(q+'-')||o.textContent.toUpperCase().startsWith(q));if(opt){sel.value=opt.value;sel.dispatchEvent(new Event('change',{bubbles:true}));proxy.blur();}});
+})();
 setupMobilePages();
 
 window.addEventListener('load',()=>{setTimeout(scanTop3,1200);setInterval(scanTop3,60000);});
@@ -1229,26 +1466,43 @@ function V96tick(){
  if(changed)V96save(a);else V96render();
 }
 function V99review(t){
- const result=(t.r||0),c=t.entryContext||{},notes=t.qualityNotes||[],issues=[];
- if((t.quality||0)<65)issues.push('進場條件完整度偏低');
- if(notes.some(x=>x.includes('追價')))issues.push('進場有追價風險');
+ const result=Number(t.r||0), notes=t.qualityNotes||[], q=Number(t.quality||0), est=Number(t.est||0);
+ const issues=[];
+ if(q<65)issues.push('進場條件完整度偏低');
+ if(notes.some(x=>x.includes('追價')))issues.push('進場位置有追價風險');
  if(notes.some(x=>x.includes('大週期尚未同向')))issues.push('大週期方向尚未確認');
- if(notes.some(x=>x.includes('Retest 尚未')))issues.push('沒有等 Retest 完成');
+ if(notes.some(x=>x.includes('Retest 尚未')))issues.push('沒有等待 Retest 完成');
+ if(notes.some(x=>x.includes('完成K')||x.includes('完成 K')))issues.push('完成 K 尚未確認');
+ if(notes.some(x=>x.includes('量能')))issues.push('量能確認不足');
  if(notes.some(x=>x.includes('R:R')&&x.includes('偏低')))issues.push('進場時風報比偏低');
- if(notes.some(x=>x.includes('TP 前')))issues.push('前方支撐/壓力空間不足');
- if(t.status==='OPEN')return {short:t.qualityVerdict||'持倉中',full:`進場評價 ${t.quality??'—'}/100。${notes.join('；')||'舊紀錄無完整快照'}`};
- if(!issues.length && (t.quality||0)>=80)return {short:'規則完整，屬正常結果',full:`結果 ${result>=0?'+':''}${result.toFixed(2)}R。進場條件與風控完整；${result<0?'本次屬策略正常虧損，不建議因單筆結果修改規則。':'本次依原規則執行有效，下一次維持同樣篩選標準。'}`};
- const main=issues[0]||'進場品質仍可改善';
- let improve='下一次等待條件更完整再進場。';
- if(main.includes('追價'))improve='下一次不要在價格已離開合理區域後追入；等待回踩、Retest 不破，再等完成 K 確認。';
- else if(main.includes('Retest'))improve='下一次突破後先等待 Retest，確認不破與完成 K，再建立交易。';
- else if(main.includes('大週期'))improve='下一次先確認 1H 方向，再用 15m 結構與 5m Trigger 找 Entry。';
- else if(main.includes('風報比')||main.includes('空間'))improve='下一次先確認前方結構空間，至少讓 TP1 有足夠 R:R，再決定是否進場。';
- return {short:`${main}｜需改善`,full:`平倉結果 ${result>=0?'+':''}${result.toFixed(2)}R。主要問題：${main}。${improve}`};
+ if(notes.some(x=>x.includes('TP 前')))issues.push('前方支撐／壓力空間不足');
+ const win=t.status==='WIN', loss=t.status==='LOSS', open=t.status==='OPEN';
+ let verdict='', repeat='';
+ if(open){verdict=q>=75?'持倉中｜進場條件相對完整':'持倉中｜進場條件仍有缺口';repeat='持續依原 SL／TP 與失效條件管理，不因短線浮盈虧任意改變風控。'}
+ else if(win&&q<65){verdict='結果獲利，但屬低品質進場';repeat='不建議把這筆 WIN 當成可複製訊號；先補足 Trigger 與風控條件。'}
+ else if(loss&&q>=75){verdict='進場品質合格，但本次屬策略虧損';repeat='可複製流程，不因單筆 LOSS 改規則；應放進同類樣本統計。'}
+ else if(win&&q>=75){verdict='進場品質良好，且結果獲利';repeat='可列入可複製樣本，後續觀察同類 setup 的勝率、EV 與 PF。'}
+ else if(loss){verdict='結果虧損，且進場條件不足';repeat='不建議重複；下一次先等待缺失條件補齊再進場。'}
+ else {verdict='結果持平｜需以進場品質判斷';repeat='不要用單筆盈虧判斷策略，保留到同類樣本統計。'}
+ let action='等待條件更完整再進場。';
+ if(issues.some(x=>x.includes('大週期')))action='先確認 1H 方向，再用 15m 結構與 5m Trigger 找 Entry。';
+ else if(issues.some(x=>x.includes('Retest')))action='突破後等待 Retest 不破，再等完成 K 確認後進場。';
+ else if(issues.some(x=>x.includes('完成 K')))action='避免在未收 K 時預判；等待完成 K 後重新確認方向與結構。';
+ else if(issues.some(x=>x.includes('量能')))action='等待量能確認；無量突破只列 WATCH，不直接 ENTRY。';
+ else if(issues.some(x=>x.includes('風報比')||x.includes('空間')))action='先確認下一個有效支撐／壓力，讓 TP1 有足夠 R:R 與正 EV 再進場。';
+ else if(issues.some(x=>x.includes('追價')))action='等待價格回到合理區域／Retest，再找完成 K Trigger，不追價。';
+ return {result,q,est,issues:[...new Set(issues)].slice(0,5),verdict,repeat,action};
 }
 function V99showReview(id){
  const t=V96load().find(x=>x.id===id);if(!t)return;const r=V99review(t);
- alert(`進場評價：${t.quality??'—'}/100\n${(t.qualityNotes||[]).join('\n')}\n\n${t.status==='OPEN'?'目前建議':'平倉檢討'}：\n${r.full}`);
+ document.getElementById('v942ReviewModal')?.remove();
+ const rr=t.entryContext?.rr??t.rr??'—', pnl=Number(t.pnlU||0), rs=Number(t.r||0);
+ const status=t.status==='OPEN'?'OPEN':t.status;
+ const issueHtml=r.issues.length?r.issues.map(x=>`<li>${x}</li>`).join(''):'<li>未偵測到主要規則缺口</li>';
+ const noteTags=(t.qualityNotes||[]).slice(0,6).map(x=>`<span class="v942-tag">${x.replace(/^⚠️?\s*/, '')}</span>`).join('');
+ const el=document.createElement('div');el.id='v942ReviewModal';el.className='v942-review-backdrop';
+ el.innerHTML=`<div class="v942-review"><div class="v942-review-head"><div><div class="v942-review-title">交易復盤｜${t.sym.replace('-USDT-SWAP','')} ${t.side}</div><div class="v942-review-sub">${t.type==='SIM'?'模擬交易':'真實交易'} · ${t.bar||'—'} · ${status}</div></div><button class="v942-close" type="button">×</button></div><div class="v942-result"><div class="v942-stat"><span>結果</span><b class="${rs>0?'v942-good':rs<0?'v942-bad':''}">${status}</b></div><div class="v942-stat"><span>損益</span><b class="${pnl>0?'v942-good':pnl<0?'v942-bad':''}">${pnl>=0?'+':''}${pnl.toFixed(2)}U</b></div><div class="v942-stat"><span>R</span><b class="${rs>0?'v942-good':rs<0?'v942-bad':''}">${rs>=0?'+':''}${rs.toFixed(2)}R</b></div><div class="v942-stat"><span>進場品質</span><b>${r.q||'—'}/100</b></div></div><div class="v942-section"><h3>進場快照</h3><div>估計勝率 <b>${r.est||'—'}%</b>　·　R:R <b>${rr}</b></div><div style="margin-top:7px">${noteTags||'<span class="v942-tag">舊紀錄無完整快照</span>'}</div></div><div class="v942-section"><h3>系統判定</h3><div class="v942-verdict">${r.verdict}</div><div style="margin-top:7px;color:#aebfda">${r.repeat}</div></div><div class="v942-section"><h3>主要缺口</h3><ul class="v942-list">${issueHtml}</ul></div><div class="v942-section v942-action"><h3>下一次怎麼做</h3><strong>${r.action}</strong></div></div>`;
+ document.body.appendChild(el);const close=()=>el.remove();el.querySelector('.v942-close').onclick=close;el.addEventListener('click',e=>{if(e.target===el)close()});
 }
 function V96render(){
  const f=V96$('v91Filter')?.value||'ALL',all=V96load(),a=all.filter(t=>f==='ALL'||t.type===f),closed=a.filter(t=>['WIN','LOSS','FLAT'].includes(t.status)),resolved=closed.filter(t=>['WIN','LOSS'].includes(t.status)),w=resolved.filter(t=>t.status==='WIN'),l=resolved.filter(t=>t.status==='LOSS'),n=resolved.length;
@@ -1492,8 +1746,8 @@ function V920tradeMetrics(){
  const L=calc('LONG'), S=calc('SHORT');
  const fmt=x=>Number.isFinite(x)?x.toFixed(2):'—';
  const lm=V96$('v920LongMetrics'), sm=V96$('v920ShortMetrics');
- if(lm)lm.textContent=`R:R 1:${fmt(L.rr)}｜EV ${Number.isFinite(L.ev)?(L.ev>=0?'+':'')+fmt(L.ev)+'R':'—'}`;
- if(sm)sm.textContent=`R:R 1:${fmt(S.rr)}｜EV ${Number.isFinite(S.ev)?(S.ev>=0?'+':'')+fmt(S.ev)+'R':'—'}`;
+ if(lm)lm.innerHTML=`R:R 1:${fmt(L.rr)}<span class="evline">EV ${Number.isFinite(L.ev)?(L.ev>=0?'+':'')+fmt(L.ev)+'R':'—'}</span>`;
+ if(sm)sm.innerHTML=`R:R 1:${fmt(S.rr)}<span class="evline">EV ${Number.isFinite(S.ev)?(S.ev>=0?'+':'')+fmt(S.ev)+'R':'—'}</span>`;
 }
 setInterval(V920tradeMetrics,1000);setTimeout(V920tradeMetrics,200);
 
@@ -1559,8 +1813,8 @@ setInterval(V920tradeMetrics,1000);setTimeout(V920tradeMetrics,200);
      return {rr,ev:p*rr-(1-p)};
    }
    const L=one('LONG'),S=one('SHORT'),f=v=>Number.isFinite(v)?v.toFixed(2):'—';
-   if($('v920LongMetrics'))$('v920LongMetrics').textContent=`R:R 1:${f(L.rr)}｜EV ${Number.isFinite(L.ev)?(L.ev>=0?'+':'')+f(L.ev)+'R':'—'}`;
-   if($('v920ShortMetrics'))$('v920ShortMetrics').textContent=`R:R 1:${f(S.rr)}｜EV ${Number.isFinite(S.ev)?(S.ev>=0?'+':'')+f(S.ev)+'R':'—'}`;
+   if($('v920LongMetrics'))$('v920LongMetrics').innerHTML=`R:R 1:${f(L.rr)}<span class="evline">EV ${Number.isFinite(L.ev)?(L.ev>=0?'+':'')+f(L.ev)+'R':'—'}</span>`;
+   if($('v920ShortMetrics'))$('v920ShortMetrics').innerHTML=`R:R 1:${f(S.rr)}<span class="evline">EV ${Number.isFinite(S.ev)?(S.ev>=0?'+':'')+f(S.ev)+'R':'—'}</span>`;
  }
  function bind(){
    ['v91Margin','v91Lev','v98FixedMaxLoss','v91EntryInput'].forEach(id=>$(id)?.addEventListener('input',()=>{fixed();metrics()}));
